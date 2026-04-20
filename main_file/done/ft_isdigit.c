@@ -1,37 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tester.c                                           :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ammirzae <ammirzae@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 15:52:57 by ammirzae          #+#    #+#             */
-/*   Updated: 2026/04/20 17:18:50 by ammirzae         ###   ########.fr       */
+/*   Created: 2026/04/20 15:50:42 by ammirzae          #+#    #+#             */
+/*   Updated: 2026/04/20 15:51:32 by ammirzae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-#include <string.h>
-
-
-size_t	ft_strlen(char *str);
-
-int	main(int argc, char **argv)
+int	ft_isdigit(int num)
 {
-	int	i;
-
-	if (argc < 2)
-	{
-		printf("please provide an argument");
+	if (num >= '0' && num <= '9')
 		return (1);
-	}
-	printf("result: %lu\nmy result: %d\n", strlen(argv[1]), ft_strlen(argv[i]));
+	return (0);
 }
-
-/*	while (argv[1][i] != '\0')
-	{
-		printf("%c = %d\n", argv[1][i], ft_isalpha(argv[1][i]));
-		i++;
-	}
-*/

@@ -1,37 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tester.c                                           :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ammirzae <ammirzae@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 15:52:57 by ammirzae          #+#    #+#             */
-/*   Updated: 2026/04/20 17:18:50 by ammirzae         ###   ########.fr       */
+/*   Created: 2026/04/20 17:08:26 by ammirzae          #+#    #+#             */
+/*   Updated: 2026/04/20 17:09:33 by ammirzae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-#include <string.h>
-
-
-size_t	ft_strlen(char *str);
-
-int	main(int argc, char **argv)
+size_t	strlen(const char *str)
 {
-	int	i;
+	size_t	i;
 
-	if (argc < 2)
-	{
-		printf("please provide an argument");
-		return (1);
-	}
-	printf("result: %lu\nmy result: %d\n", strlen(argv[1]), ft_strlen(argv[i]));
-}
-
-/*	while (argv[1][i] != '\0')
-	{
-		printf("%c = %d\n", argv[1][i], ft_isalpha(argv[1][i]));
+	i = 0;
+	while (str != '\0')
 		i++;
-	}
-*/
+	return (i);
+}
