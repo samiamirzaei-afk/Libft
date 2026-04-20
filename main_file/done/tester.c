@@ -13,7 +13,7 @@ int main(int argc, char **argv)
     i = 0;
     while (argv[1][i] != '\0')
     {
-        printf("%c = %d\n", argv[1][i], ft_isalpha(argv[1][i]));
+        printf("%c = %d\n", argv[1][i], ft_isalnum(argv[1][i]));
         i++;
     }
 }
