@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ammirzae <ammirzae@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 15:55:28 by ammirzae          #+#    #+#             */
-/*   Updated: 2026/04/20 15:55:42 by ammirzae         ###   ########.fr       */
+/*   Created: 2026/04/20 13:59:02 by ammirzae          #+#    #+#             */
+/*   Updated: 2026/04/20 13:59:05 by ammirzae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int num)
+#include "libft.h"
+
+int	ft_isalnum(int num)
 {
-	if (num >= 0 && num <= 127)
+	if (num >= '0' && num <= '9')
+		return (1);
+	if (num >= 'A' && num <= 'Z')
+		return (1);
+	if (num >= 'a' && num <= 'z')
 		return (1);
 	return (0);
 }

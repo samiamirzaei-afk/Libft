@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ammirzae <ammirzae@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 16:53:14 by ammirzae          #+#    #+#             */
-/*   Updated: 2026/04/20 17:07:21 by ammirzae         ###   ########.fr       */
+/*   Created: 2026/04/20 17:08:26 by ammirzae          #+#    #+#             */
+/*   Updated: 2026/04/21 08:52:23 by ammirzae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int number)
+#include "libft.h"
+
+size_t	ft_strlen(const char *str)
 {
-	if (number >= ' ' && number <= '~')
-		return (1);
-	return (0);
+	size_t	i;
+
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
 }

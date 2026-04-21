@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ammirzae <ammirzae@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 12:06:38 by ammirzae          #+#    #+#             */
-/*   Updated: 2026/04/20 13:09:10 by ammirzae         ###   ########.fr       */
+/*   Created: 2026/04/20 16:53:14 by ammirzae          #+#    #+#             */
+/*   Updated: 2026/04/20 17:07:21 by ammirzae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int number)
+#include "libft.h"
+
+int	ft_isprint(int number)
 {
-	if (number >= 'A' && number <= 'z')
-	{
-		if (!(number >= '[' && number <= '`'))
-			return (1);
-	}
+	if (number >= ' ' && number <= '~')
+		return (1);
 	return (0);
 }
-
-/* return 1 if 'number' is a letter */
