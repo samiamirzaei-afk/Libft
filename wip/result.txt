@@ -1,0 +1,4 @@
+cc -isystem /usr/include/bsd ft_strnstr.c -o sns.out -l bsd
+
+
+result: ich? Dann singe ich ein Lied für dich, Von 99 Luftballons Auf ihrem Weg zum Horizont.
