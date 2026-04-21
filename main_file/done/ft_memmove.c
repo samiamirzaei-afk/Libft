@@ -6,11 +6,12 @@
 /*   By: ammirzae <ammirzae@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 12:43:18 by ammirzae          #+#    #+#             */
-/*   Updated: 2026/04/21 12:58:50 by ammirzae         ###   ########.fr       */
+/*   Updated: 2026/04/21 16:35:34 by ammirzae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+#include <stdio.h>
 
 void	*ft_memmove(void *dest, const void *src, size_t length)
 {
@@ -24,17 +25,18 @@ void	*ft_memmove(void *dest, const void *src, size_t length)
 	i = 0;
 	while (i < length)
 	{
-		ptr_dest[i] = *ptr_copy;
+		ptr_copy[i] = ptr_src[0];
 		i++;
-		*ptr_copy += 1;
+		ptr_src += 1;
 	}
-	*ptr_copy -= i + 1;
 	i = 0;
+
+//	printf("***ptr_copy:'%s' ***\n", ptr_copy);
+
 	while (i < length)
 	{
-		ptr_dest = ptr_copy;
+		ptr_dest[0] = ptr_copy[i];
 		i++;
-		*ptr_copy += 1;
 		ptr_dest += 1;
 	}
 	return (dest);

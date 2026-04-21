@@ -19,21 +19,22 @@
 int	main(void)
 {
 	int		i;
-	char	str[] = {"01"};
-	char	str2[] = {"01"};
-	char	str3[] = {"01"};
-	char	str4[10] = {"01"};
-	char	src[] = {"abcdefg"};
+	char	str[] = {"012345"};
+	char	str2[] = {"012345"};
+	char	str3[] = {"012345"};
+	char	str4[] = {"012345"};
+	char	src[] = {"ABCDEFG"};
 	 
 	i = 0;
 	printf("strings before: %s\n", str);
-	memmove((void *)str, src, 0);
-	memmove((void *)str2, src, 1);
-	memmove((void *)str3, src, 2);
-	memmove((void *)str4, src, 3);
+	memmove((void *)str, src, 2);
+	ft_memmove((void *)str2, src, 2);
 	printf("string after: %s\n", str);
-	printf("string2 after: %s\n", str2);
-	printf("string2 after: %s\n", str3);
+	printf("string2 after: %s\n\n", str2);
+	
+	memmove((void *)str3, src, 4);
+	ft_memmove((void *)str4, src, 4);
+	printf("string after: %s\n", str3);
 	printf("string2 after: %s\n", str4);
 	
 	printf("\n\n");
@@ -45,8 +46,8 @@ int	main(void)
 	char	asrc[] = {"abcdefg"};
 	
 	printf("strings before: %s\n", astr);
-	memmove((void *)&astr[5], asrc, 6);
-	ft_memmove((void *)&astr2[5], asrc, 6);
+	memmove((void *)&astr[5], asrc, 3);
+	ft_memmove((void *)&astr2[5], asrc, 3);
 	printf("string after: %s\n", astr);
 	printf("string2 after: %s\n", astr2);
 	
@@ -59,10 +60,21 @@ int	main(void)
 	char	ssrc[] = {"lol"};
 	
 	printf("strings before: %s\n", sstr);
-	memmove((void *)&sstr[5], ssrc, 20);
-	ft_memmove((void *)&sstr2[5], ssrc, 20);
+	memmove((void *)sstr, ssrc, 4);
+	ft_memmove((void *)sstr2, ssrc, 4);
 	printf("string after: %s\n", sstr);
 	printf("string2 after: %s\n", sstr2);
+/*
+	char	*s1str = {""};
+	char	*s1str2 = {""};
+	char	s1src[] = {"lol"};
+	
+	printf("strings before: %s\n", s1str);
+	memmove((void *)s1str, s1src, 4);
+	ft_memmove((void *)sstr2, s1src, 4);
+	printf("string after: %s\n", s1str);
+	printf("string2 after: %s\n", s1str2);
+*/
 
 }
 
