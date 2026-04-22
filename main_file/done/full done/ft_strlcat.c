@@ -6,7 +6,7 @@
 /*   By: ammirzae <ammirzae@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 13:31:46 by ammirzae          #+#    #+#             */
-/*   Updated: 2026/04/22 13:40:14 by ammirzae         ###   ########.fr       */
+/*   Updated: 2026/04/22 14:16:38 by ammirzae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,3 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	dest[dest_i] = '\0';
 	return (result);
 }
-
