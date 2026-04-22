@@ -6,7 +6,7 @@
 /*   By: ammirzae <ammirzae@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 15:52:57 by ammirzae          #+#    #+#             */
-/*   Updated: 2026/04/21 12:56:40 by ammirzae         ###   ########.fr       */
+/*   Updated: 2026/04/22 13:39:55 by ammirzae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,65 +16,72 @@
 #include <unistd.h>
 
 
+#define LIBBSD_OVERLAY	1
+size_t  ft_strlcat(char *dest, const char *src, size_t size);
+size_t	strlcat(char *dst, const char *src, size_t size);
+
 int	main(void)
 {
 	int		i;
-	char	str[] = {"012345"};
-	char	str2[] = {"012345"};
-	char	str3[] = {"012345"};
-	char	str4[] = {"012345"};
-	char	src[] = {"ABCDEFG"};
-	 
-	i = 0;
-	printf("strings before: %s\n", str);
-	memmove((void *)str, src, 2);
-	ft_memmove((void *)str2, src, 2);
-	printf("string after: %s\n", str);
-	printf("string2 after: %s\n\n", str2);
+	char	str[] = {"0123456789"};
+	char	str2[20] = {""};
+	char	str3[] = {"0123456789"};
+	char	str4[20] = {""};
+	int	len;
+	int	ft_len;
 	
-	memmove((void *)str3, src, 4);
-	ft_memmove((void *)str4, src, 4);
-	printf("string after: %s\n", str3);
-	printf("string2 after: %s\n", str4);
+	i = 0;
+	printf("strings before: '%s'  '%s'\n", str, str2);
+	len = strlcat(str2, str, 20);
+	ft_len = ft_strlcat(str4, str3, 20);
+	printf("strlcat:'%d' '%s'\n",len, str2);
+	printf("ft_strlcat:'%d' '%s'\n\n",ft_len, str4);
+
 	
 	printf("\n\n");
 	
+	char	str1[] = {"0123456789"};
+	char	str21[20] = {""};
+	char	str31[] = {"0123456789"};
+	char	str41[20] = {""};
 	
-	
-	char	astr[] = {"0123456789"};
-	char	astr2[] = {"0123456789"};
-	char	asrc[] = {"abcdefg"};
-	
-	printf("strings before: %s\n", astr);
-	memmove((void *)&astr[5], asrc, 3);
-	ft_memmove((void *)&astr2[5], asrc, 3);
-	printf("string after: %s\n", astr);
-	printf("string2 after: %s\n", astr2);
+	printf("strings before: '%s'  '%s'\n", str1, str21);
+	len = strlcat(str21, str1, 20);
+	ft_len = ft_strlcat(str41, str31, 20);
+	printf("strlcat:'%d' '%s'\n",len, str21);
+	printf("ft_strlcat:'%d' '%s'\n\n",ft_len, str41);
 	
 	printf("\n\n");
 	
 	
 
-	char	sstr[] = {"Hast du etwas Zeit für mich? Dann singe ich ein Lied für dich Von 99 Luftballons; Auf ihrem Weg zum Horizont. Denkst du vielleicht grad an mich?"};
-	char	sstr2[] = {"Hast du etwas Zeit für mich? Dann singe ich ein Lied für dich Von 99 Luftballons; Auf ihrem Weg zum Horizont. Denkst du vielleicht grad an mich?"};
-	char	ssrc[] = {"lol"};
+	char	sstr1[] = {"Hast du etwas Zeit für mich? Dann singe ich ein Lied für dich Von 99 Luftballons; Auf ihrem Weg zum Horizont. Denkst du vielleicht grad an mich?"};
+	char	sstr2[10] = {""};
+	char	sstr3[] = {"Hast du etwas Zeit für mich? Dann singe ich ein Lied für dich Von 99 Luftballons; Auf ihrem Weg zum Horizont. Denkst du vielleicht grad an mich?"};
+	char	sstr4[10] = {""};
 	
-	printf("strings before: %s\n", sstr);
-	memmove((void *)sstr, ssrc, 4);
-	ft_memmove((void *)sstr2, ssrc, 4);
-	printf("string after: %s\n", sstr);
-	printf("string2 after: %s\n", sstr2);
-/*
-	char	*s1str = {""};
-	char	*s1str2 = {""};
-	char	s1src[] = {"lol"};
 	
-	printf("strings before: %s\n", s1str);
-	memmove((void *)s1str, s1src, 4);
-	ft_memmove((void *)sstr2, s1src, 4);
-	printf("string after: %s\n", s1str);
-	printf("string2 after: %s\n", s1str2);
-*/
+	printf("strings before: '%s'  '%s'\n", sstr1, sstr2);
+	len = strlcat(sstr2, sstr1, 10);
+	ft_len =ft_strlcat(sstr4, sstr3, 10);
+	printf("strlcat:'%d' %s\n",len, sstr2);
+	printf("ft_strlcat:'%d' %s\n\n",ft_len, sstr4);
+	
+	printf("\n\n");
+	
+
+	char	str11[] = {""};
+	char	str211[20] = {""};
+	char	str311[] = {""};
+	char	str411[20] = {""};
+
+	printf("strings before: '%s'  '%s'\n", str11, str211);
+	len = strlcat(str211, str11, 20);
+	ft_len = ft_strlcat(str411, str311, 20);
+	printf("strlcat:'%d' '%s'\n",len, str211);
+	printf("ft_strlcat:'%d' '%s'\n\n",ft_len, str411);
+
+
 
 }
 
