@@ -21,7 +21,7 @@ char	*ft_strchr(const char *str, int num)
 		return ((char *)&str[i]);
 	while (str[i])
 	{
-		if (str[i] == num)
+		if (str[i] == (unsigned char)num)
 			return ((char *)&str[i]);
 		i++;
 	}
