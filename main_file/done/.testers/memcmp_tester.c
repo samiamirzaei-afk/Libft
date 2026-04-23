@@ -6,7 +6,7 @@
 /*   By: ammirzae <ammirzae@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 15:52:57 by ammirzae          #+#    #+#             */
-/*   Updated: 2026/04/23 17:52:28 by ammirzae         ###   ########.fr       */
+/*   Updated: 2026/04/23 13:26:25 by ammirzae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,9 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-int atoi(const char *nptr);
-int ft_atoi(const char *nptr);
+int memcmp(const void *s1, const void *s2, size_t n);
+int ft_memcmp(const void *s1, const void *s2, size_t n);
+
 
 int	main(void)
 {
@@ -43,10 +44,10 @@ int	main(void)
 	
 	i = 0;
 	printf("strings before: '%s'  '%s'\n", str, str2);
-	len = atoi(str, str2, 3);
-	ft_len = ft_atoi(str3, str4, 3);
-	printf("atoi:'%d'\n",len);
-	printf("ft_atoi:'%d'\n\n",ft_len);
+	len = memcmp(str, str2, 3);
+	ft_len = ft_memcmp(str3, str4, 3);
+	printf("memcmp:'%d'\n",len);
+	printf("ft_memcmp:'%d'\n\n",ft_len);
 
 	
 	printf("\n\n");
@@ -57,26 +58,26 @@ int	main(void)
 	char	str41[20] = {"g"};
 	
 	printf("strings before: '%s'  '%s'\n", str1, str21);
-	len = atoi(str1, str21, 7);
-	ft_len = ft_atoi(str31, str41, 7);
-	printf("atoi:'%d'\n",len);
-	printf("ft_atoi:'%d'\n\n",ft_len);
+	len = memcmp(str1, str21, 7);
+	ft_len = ft_memcmp(str31, str41, 7);
+	printf("memcmp:'%d'\n",len);
+	printf("ft_memcmp:'%d'\n\n",ft_len);
 	
 	printf("\n\n");
 	
 	
 
 	char	sstr1[] = {"Hast du etwas Zeit für mich? Dann singe ich ein Lied für dich Von 99 Luftballons; Auf ihrem Weg zum Horizont. Denkst du vielleicht grad an mich?"};
-	char	sstr2[10] = {"ich"};
+	char	sstr2[10] = {"."};
 	char	sstr3[] = {"Hast du etwas Zeit für mich? Dann singe ich ein Lied für dich Von 99 Luftballons; Auf ihrem Weg zum Horizont. Denkst du vielleicht grad an mich?"};
-	char	sstr4[10] = {"ich"};
+	char	sstr4[10] = {"."};
 	
 	
 	printf("strings before: '%s'  '%s'\n", sstr1, sstr2);
-	len = atoi(sstr1, sstr2, 30);
-	ft_len =ft_atoi(sstr3, sstr4, 30);
-	printf("atoi: '%d'\n",len);
-	printf("ft_atoi: '%d'\n\n", ft_len);
+	len = memcmp(sstr1, sstr2, 30);
+	ft_len =ft_memcmp(sstr3, sstr4, 30);
+	printf("memcmp: '%d'\n",len);
+	printf("ft_memcmp: '%d'\n\n", ft_len);
 	
 	printf("\n\n");
 	
@@ -87,10 +88,10 @@ int	main(void)
 	char	str411[20] = {""};
 
 	printf("strings before: '%s'  '%s'\n", str11, str211);
-	len = atoi(str211, str11, 1);
-	ft_len = ft_atoi(str411, str311, 1);
-	printf("atoi:'%d'\n",len);
-	printf("ft_atoi:'%d'\n\n",ft_len);
+	len = memcmp(str211, str11, 1);
+	ft_len = ft_memcmp(str411, str311, 1);
+	printf("memcmp:'%d'\n",len);
+	printf("ft_memcmp:'%d'\n\n",ft_len);
 
 	printf("\n\n");
 	
@@ -101,8 +102,8 @@ int	main(void)
 	char	str412[] = {"lol"};
 
 	printf("strings before: '%s'  '%s'\n", str12, str212);
-	len = atoi(str12, str212, 3);
-	ft_len = ft_atoi(str312, str412, 3);
+	len = memcmp(str12, str212, 3);
+	ft_len = ft_memcmp(str312, str412, 3);
 	printf("strrchr:'%d'\n",len);
 	printf("ft_strrchr:'%d'\n\n",ft_len);
 	
@@ -117,8 +118,8 @@ int	main(void)
 	
 	
 	printf("strings before: '%s'  '%s'\n", sstr1, sstr2);
-	len = atoi(sstr22, sstr33, 9999);
-	ft_len =ft_atoi(sstr44, sstr55, 9999);
+	len = memcmp(sstr22, sstr33, 9999);
+	ft_len =ft_memcmp(sstr44, sstr55, 9999);
 	printf("strrchr: '%d'\n",len);
 	printf("ft_strrchr: '%d'\n\n", ft_len);
 

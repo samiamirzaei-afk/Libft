@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ammirzae <ammirzae@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/22 14:35:50 by ammirzae          #+#    #+#             */
-/*   Updated: 2026/04/22 16:11:37 by ammirzae         ###   ########.fr       */
+/*   Created: 2026/04/23 11:34:50 by ammirzae          #+#    #+#             */
+/*   Updated: 2026/04/23 12:02:25 by ammirzae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int num)
+void	*ft_memchr(const void *str, int number, size_t size)
 {
-	int	i;
+	unsigned char	*ptr_str;
+	size_t			i;
 
+	ptr_str = (unsigned char *)str;
 	i = 0;
-	if (str[i] == num)
-		return ((char *)&str[i]);
-	while (str[i])
+	if (ptr_str[i] == (unsigned char)number)
+		return (&ptr_str[i]);
+	while (i < size)
 	{
-		if (str[i] == num)
-			return ((char *)&str[i]);
+		if (ptr_str[i] == (unsigned char)number)
+			return (&ptr_str[i]);
 		i++;
 	}
 	return ((void *)0);

@@ -6,7 +6,7 @@
 /*   By: ammirzae <ammirzae@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 15:52:57 by ammirzae          #+#    #+#             */
-/*   Updated: 2026/04/23 17:52:28 by ammirzae         ###   ########.fr       */
+/*   Updated: 2026/04/23 18:00:41 by ammirzae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,23 +42,21 @@ int	main(void)
 	int		ft_len;
 	
 	i = 0;
-	printf("strings before: '%s'  '%s'\n", str, str2);
-	len = atoi(str, str2, 3);
-	ft_len = ft_atoi(str3, str4, 3);
+	printf("strings before: '%s'\n", str);
+	len = atoi(str);
+	ft_len = ft_atoi(str3);
 	printf("atoi:'%d'\n",len);
 	printf("ft_atoi:'%d'\n\n",ft_len);
 
 	
 	printf("\n\n");
 	
-	char	str1[] = {"0123456789"};
-	char	str21[20] = {"g"};
-	char	str31[] = {"0123456789"};
-	char	str41[20] = {"g"};
+	char	str21[20] = {"      53g345"};
+	char	str41[20] = {"      53g345"};
 	
-	printf("strings before: '%s'  '%s'\n", str1, str21);
-	len = atoi(str1, str21, 7);
-	ft_len = ft_atoi(str31, str41, 7);
+	printf("strings before: '%s'\n", str21);
+	len = atoi(str21);
+	ft_len = ft_atoi(str41);
 	printf("atoi:'%d'\n",len);
 	printf("ft_atoi:'%d'\n\n",ft_len);
 	
@@ -72,9 +70,9 @@ int	main(void)
 	char	sstr4[10] = {"ich"};
 	
 	
-	printf("strings before: '%s'  '%s'\n", sstr1, sstr2);
-	len = atoi(sstr1, sstr2, 30);
-	ft_len =ft_atoi(sstr3, sstr4, 30);
+	printf("strings before: '%s'\n", sstr1);
+	len = atoi(sstr1);
+	ft_len =ft_atoi(sstr3);
 	printf("atoi: '%d'\n",len);
 	printf("ft_atoi: '%d'\n\n", ft_len);
 	
@@ -86,23 +84,21 @@ int	main(void)
 	char	str311[] = {""};
 	char	str411[20] = {""};
 
-	printf("strings before: '%s'  '%s'\n", str11, str211);
-	len = atoi(str211, str11, 1);
-	ft_len = ft_atoi(str411, str311, 1);
+	printf("strings before: '%s'\n", str11);
+	len = atoi(str211);
+	ft_len = ft_atoi(str411);
 	printf("atoi:'%d'\n",len);
 	printf("ft_atoi:'%d'\n\n",ft_len);
 
 	printf("\n\n");
 	
 
-	char	str12[] = {"lol"};
-	char	str212[] = {"lol"};
-	char	str312[] = {"lol"};
-	char	str412[] = {"lol"};
+	char	str12[] = {"-2147483648"};
+	char	str312[] = {"-2147483648"};
 
-	printf("strings before: '%s'  '%s'\n", str12, str212);
-	len = atoi(str12, str212, 3);
-	ft_len = ft_atoi(str312, str412, 3);
+	printf("strings before: '%s'\n", str12);
+	len = atoi(str12);
+	ft_len = ft_atoi(str312);
 	printf("strrchr:'%d'\n",len);
 	printf("ft_strrchr:'%d'\n\n",ft_len);
 	
@@ -110,18 +106,29 @@ int	main(void)
 	
 	
 
-	char	sstr22[] = {"Hast du etwas Zeit für mich? Dann singe ich ein Lied für dich Von 99 Luftballons; Auf ihrem Weg zum Horizont. Denkst du vielleicht grad an mich?"};
-	char	sstr33[10] = {""};
-	char	sstr44[] = {"Hast du etwas Zeit für mich? Dann singe ich ein Lied für dich Von 99 Luftballons; Auf ihrem Weg zum Horizont. Denkst du vielleicht grad an mich?"};
-	char	sstr55[10] = {""};
+	char	sstr33[13] = {"2147483647"};
+	char	sstr55[13] = {"2147483647"};
 	
 	
-	printf("strings before: '%s'  '%s'\n", sstr1, sstr2);
-	len = atoi(sstr22, sstr33, 9999);
-	ft_len =ft_atoi(sstr44, sstr55, 9999);
+	printf("strings before:'%s'\n", sstr33);
+	len = atoi(sstr33);
+	ft_len =ft_atoi(sstr55);
 	printf("strrchr: '%d'\n",len);
 	printf("ft_strrchr: '%d'\n\n", ft_len);
 
+
+
+		printf("\n\n");
+
+    char    sstr44[] = {"214748364711111"};
+    char    sstr66[] = {"214748364711111"};
+
+
+    printf("strings before:'%s'\n", sstr44);
+    len = atoi(sstr44);
+    ft_len =ft_atoi(sstr66);
+    printf("strrchr: '%d'\n",len);
+    printf("ft_strrchr: '%d'\n\n", ft_len);
 
 }
 

@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ammirzae <ammirzae@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/22 14:35:50 by ammirzae          #+#    #+#             */
-/*   Updated: 2026/04/22 16:11:37 by ammirzae         ###   ########.fr       */
+/*   Created: 2026/04/23 12:04:09 by ammirzae          #+#    #+#             */
+/*   Updated: 2026/04/23 14:43:50 by ammirzae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stddef.h>
 
-char	*ft_strchr(const char *str, int num)
+int	ft_memcmp(const void *str1, const void *str2, size_t size)
 {
-	int	i;
+	size_t			i;
+	unsigned char	*ptr_str1;
+	unsigned char	*ptr_str2;
 
 	i = 0;
-	if (str[i] == num)
-		return ((char *)&str[i]);
-	while (str[i])
+	ptr_str1 = (unsigned char *)str1;
+	ptr_str2 = (unsigned char *)str2;
+	while (i < size)
 	{
-		if (str[i] == num)
-			return ((char *)&str[i]);
+		if (ptr_str1[i] != ptr_str2[i])
+			return (ptr_str1[i] - ptr_str2[i]);
 		i++;
 	}
-	return ((void *)0);
+	return (0);
 }

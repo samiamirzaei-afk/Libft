@@ -6,7 +6,7 @@
 /*   By: ammirzae <ammirzae@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 15:52:57 by ammirzae          #+#    #+#             */
-/*   Updated: 2026/04/23 17:52:28 by ammirzae         ###   ########.fr       */
+/*   Updated: 2026/04/23 17:42:50 by ammirzae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,9 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-int atoi(const char *nptr);
-int ft_atoi(const char *nptr);
+char    *ft_strnstr(const char *big, const char *little, size_t len);
+char    *strnstr(const char *big, const char *little, size_t len);
+
 
 int	main(void)
 {
@@ -38,15 +39,15 @@ int	main(void)
 	char	str2[20] = {"2"};
 	char	str3[] = {"0123456789"};
 	char	str4[20] = {"2"};
-	int		len;
-	int		ft_len;
+	char		*len;
+	char		*ft_len;
 	
 	i = 0;
 	printf("strings before: '%s'  '%s'\n", str, str2);
-	len = atoi(str, str2, 3);
-	ft_len = ft_atoi(str3, str4, 3);
-	printf("atoi:'%d'\n",len);
-	printf("ft_atoi:'%d'\n\n",ft_len);
+	len = strnstr(str, str2, 3);
+	ft_len = ft_strnstr(str3, str4, 3);
+	printf("strnstr:'%s'\n",len);
+	printf("ft_strnstr:'%s'\n\n",ft_len);
 
 	
 	printf("\n\n");
@@ -57,10 +58,10 @@ int	main(void)
 	char	str41[20] = {"g"};
 	
 	printf("strings before: '%s'  '%s'\n", str1, str21);
-	len = atoi(str1, str21, 7);
-	ft_len = ft_atoi(str31, str41, 7);
-	printf("atoi:'%d'\n",len);
-	printf("ft_atoi:'%d'\n\n",ft_len);
+	len = strnstr(str1, str21, 7);
+	ft_len = ft_strnstr(str31, str41, 7);
+	printf("strnstr:'%s'\n",len);
+	printf("ft_strnstr:'%s'\n\n",ft_len);
 	
 	printf("\n\n");
 	
@@ -73,10 +74,10 @@ int	main(void)
 	
 	
 	printf("strings before: '%s'  '%s'\n", sstr1, sstr2);
-	len = atoi(sstr1, sstr2, 30);
-	ft_len =ft_atoi(sstr3, sstr4, 30);
-	printf("atoi: '%d'\n",len);
-	printf("ft_atoi: '%d'\n\n", ft_len);
+	len = strnstr(sstr1, sstr2, 30);
+	ft_len =ft_strnstr(sstr3, sstr4, 30);
+	printf("strnstr: '%s'\n",len);
+	printf("ft_strnstr: '%s'\n\n", ft_len);
 	
 	printf("\n\n");
 	
@@ -87,10 +88,10 @@ int	main(void)
 	char	str411[20] = {""};
 
 	printf("strings before: '%s'  '%s'\n", str11, str211);
-	len = atoi(str211, str11, 1);
-	ft_len = ft_atoi(str411, str311, 1);
-	printf("atoi:'%d'\n",len);
-	printf("ft_atoi:'%d'\n\n",ft_len);
+	len = strnstr(str211, str11, 1);
+	ft_len = ft_strnstr(str411, str311, 1);
+	printf("strnstr:'%s'\n",len);
+	printf("ft_strnstr:'%s'\n\n",ft_len);
 
 	printf("\n\n");
 	
@@ -101,10 +102,10 @@ int	main(void)
 	char	str412[] = {"lol"};
 
 	printf("strings before: '%s'  '%s'\n", str12, str212);
-	len = atoi(str12, str212, 3);
-	ft_len = ft_atoi(str312, str412, 3);
-	printf("strrchr:'%d'\n",len);
-	printf("ft_strrchr:'%d'\n\n",ft_len);
+	len = strnstr(str12, str212, 3);
+	ft_len = ft_strnstr(str312, str412, 3);
+	printf("strrchr:'%s'\n",len);
+	printf("ft_strrchr:'%s'\n\n",ft_len);
 	
 		printf("\n\n");
 	
@@ -117,10 +118,10 @@ int	main(void)
 	
 	
 	printf("strings before: '%s'  '%s'\n", sstr1, sstr2);
-	len = atoi(sstr22, sstr33, 9999);
-	ft_len =ft_atoi(sstr44, sstr55, 9999);
-	printf("strrchr: '%d'\n",len);
-	printf("ft_strrchr: '%d'\n\n", ft_len);
+	len = strnstr(sstr22, sstr33, 9999);
+	ft_len =ft_strnstr(sstr44, sstr55, 9999);
+	printf("strrchr: '%s'\n",len);
+	printf("ft_strrchr: '%s'\n\n", ft_len);
 
 
 }
