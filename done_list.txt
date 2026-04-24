@@ -21,7 +21,7 @@ ft_strnstr.c ✓
 ft_atoi.c    ✓
 
 MALLOC FOR THESE:
-ft_calloc.c
+ft_calloc.c  ✓
 ft_strdup.c
 
 ft_.c
@@ -31,8 +31,5 @@ ft_.c
 ft_.c
 ft_.c
 
-
-corrected ft_strchr
-updated done_list
-
-added atoi, memchr, memcmp, strnstr
+MAKE CALLOC TESTER BETTER!!!!
+for part two check for fail checks if not ptr return  if (!ptr) return ;
