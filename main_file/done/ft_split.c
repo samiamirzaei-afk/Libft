@@ -1,45 +1,99 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ammirzae <ammirzae@student.42vienna.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/25 10:42:21 by ammirzae          #+#    #+#             */
+/*   Updated: 2026/04/25 13:28:17 by ammirzae         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 
+static int sep_check(const char *str, char sep)
+{
+	int i;
+	int sep_count;
+	
+	i = 0;
+	sep_count = 0;
+	if(str[i] != sep)
+		sep_count++;
+	while(str[i] == sep && str[i] != '\0')
+		i++;
+	while(str[i])
+	{
+		if(str[i] == sep && str[i] != '\0')
+		{
+			while(str[i] == sep && str[i] != '\0')
+				i++;
+			if(str[i])
+				sep_count++;
+		}
+		if(str[i])	
+			i++;
+	}
+	return(sep_count);
+}
 
+static char	*malloc_maker(const char *str, char sep, int *i)
+{
+	int sub_length;
+	char *result;
+	int k;
 
-char	**ft_split(char *str, char sep)
+	k = 0;
+	sub_length = 0;
+	while (str[*i] != sep && str[*i] != '\0')
+	{
+		sub_length++;
+		*i += 1;
+	}
+	result = malloc((sub_length + 1) * sizeof(char));
+	if(result == NULL)
+		return(NULL);
+	result[sub_length] = '\0';
+	*i -= sub_length;
+	while(k < sub_length)
+	{
+		result[k] = str[*i];
+		k++;
+		*i += 1;
+	} 
+	return (result);
+
+}
+
+char	**ft_split(const char *str, char sep)
 {
 	int i;
 	int sep_count;
 	char **result;
+	int k;
 	
 	i = 0;
-	sep_count = 0;
-	while (str[i])
-	{
-		if(memchr(&str[i], sep, 1) != NULL && str[i] != '\0')
-		{	
-			while(memchr(&str[i], sep, 1) != NULL && str[i + 1] != '\0')
-			{
-			//	printf("found one at '%d', its an '%c'\n", i, str[i]);
-				i++;
-			}
-				
-			printf("stepcount added at'%d' '%c'\n", i - 1, str[i - 1]);
-			if(
-			sep_count++;
-
-		}
-		
-		i++;
-	}
+	sep_count = sep_check(str, sep);
 	result = malloc((sep_count + 1) * sizeof(char*));
-	result[sep_count] == NULL;
+	if(result == NULL)
+		return (NULL);	
+	result[sep_count] = NULL;
 	i = 0;
+	k = 0;
+	if(sep_count != sep)
+		i++;
 	while(i < sep_count)
 	{
-		result[i] = malloc(2 * sizeof(char));
-		result[i][0] = 'b';
-		result[i][1] = '\0';
+		result[k] = malloc_maker(str, sep, &i);
+		if(result[k] == NULL)
+			return (NULL);
+//			ft_NULL_maker. 	
 		i++;
+		k++;
 	}
 	printf("sep_count: '%d'\n", sep_count);
 	for(i = 0; result[i] != NULL; i++)
@@ -48,17 +102,18 @@ char	**ft_split(char *str, char sep)
 	
 	}
 
-	return(NULL);
+	return(result);
 }
 // this version is wrong because if "baaaba" is given, it will make 3 arrays, its adding the last a's before '\0'
-int     main(int argc, char **argv)
+int     main(void)
 {
 	char	sep = 'a'; 
-	char	str001[] = "ab";
-	char	str002[] = "aaab";
-	char	str003[] = "aaaaaaaab";
+	char	str001[] = "abbbbbb";
+	char	str002[] = "aaa";
+	char	str003[] = "aaaaaaaa";
 	char	str004[] = "abab";
 	char	str005[] = "aaaaabaaaab";
+
 	char	str006[] = "bab";
 	char	str007[] = "baaaaab";
 	char	str008[] = "aabaaab";
@@ -113,3 +168,35 @@ int     main(int argc, char **argv)
 	printf("\n\n");
 }
 
+/*thanks for shash for clean code idea*/
+/*
+ while (str[i])
+    {
+        if(memchr(&str[i], sep, 1) != NULL && str[i] != '\0')
+        {
+            while(memchr(&str[i], sep, 1) != NULL && str[i] != '\0')
+                i++;
+            if(str[i] != '\0')
+                sep_count++;
+        }
+        i++;
+    }
+*/
+
+
+/*static int sep_check(const char *str, char sep, int *i)
+{
+	while (str[*i])
+    	{
+        	if(str[*i] == sep && str[*i] != '\0')
+        	{
+           	 while(str[*i] == sep && str[*i] != '\0')
+           	     *i += 1;
+			 if(str[*i] != '\0')
+           	     return(1);
+        	}
+	 if(str[*i] != '\0')
+		 *i += 1;
+}
+	return(0);
+}*/
