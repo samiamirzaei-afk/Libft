@@ -6,11 +6,9 @@
 /*   By: ammirzae <ammirzae@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 15:55:28 by ammirzae          #+#    #+#             */
-/*   Updated: 2026/04/20 15:55:42 by ammirzae         ###   ########.fr       */
+/*   Updated: 2026/04/25 15:23:57 by ammirzae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_isascii(int num)
 {

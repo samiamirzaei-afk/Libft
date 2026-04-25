@@ -22,7 +22,7 @@ ft_atoi.c    ✓
 
 MALLOC FOR THESE:
 ft_calloc.c  ✓
-ft_strdup.c
+ft_strdup.c  ✓
 
 ft_.c
 ft_.c

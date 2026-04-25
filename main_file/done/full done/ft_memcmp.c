@@ -6,11 +6,11 @@
 /*   By: ammirzae <ammirzae@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 12:04:09 by ammirzae          #+#    #+#             */
-/*   Updated: 2026/04/23 14:43:50 by ammirzae         ###   ########.fr       */
+/*   Updated: 2026/04/25 15:22:49 by ammirzae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 int	ft_memcmp(const void *str1, const void *str2, size_t size)
 {

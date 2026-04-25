@@ -6,11 +6,9 @@
 /*   By: ammirzae <ammirzae@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 12:06:38 by ammirzae          #+#    #+#             */
-/*   Updated: 2026/04/20 13:09:10 by ammirzae         ###   ########.fr       */
+/*   Updated: 2026/04/25 15:23:48 by ammirzae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_isalpha(int number)
 {

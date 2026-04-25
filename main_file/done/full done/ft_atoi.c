@@ -6,11 +6,9 @@
 /*   By: ammirzae <ammirzae@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 17:48:47 by ammirzae          #+#    #+#             */
-/*   Updated: 2026/04/23 18:05:30 by ammirzae         ###   ########.fr       */
+/*   Updated: 2026/04/25 15:23:20 by ammirzae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 static int	ft_negative_add(char *str, int *i)
 {
