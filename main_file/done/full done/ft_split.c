@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -35,7 +34,32 @@ static int sep_check(const char *str, char sep)
 	return(sep_count);
 }
 
-static char	*malloc_maker(const char *str, char sep, char **result, int sep_count)
+static int	sep_len(const char *str, char sep, int *i)
+{
+	int len;
+
+	len = 0;
+	while(str[*i] && str[*i] != sep)
+	{
+		*i += 1;
+		len++;
+	}
+	return (len);
+}
+
+static char	**ft_null_maker(char **str, int len, int i)
+{
+	i = 0;
+	while(i < len)
+	{
+		str[i] = NULL;
+		i++;
+	}
+	str = NULL;
+	return(NULL);
+}
+
+static char	**malloc_maker(const char *str, char sep, char **result, int sep_count)
 {
 	int i;
 	int k;
@@ -46,20 +70,18 @@ static char	*malloc_maker(const char *str, char sep, char **result, int sep_coun
 	k = 0;
 	while(k < sep_count)
 	{
-		len = 0;
-		while(str[i] && str[i] != sep)
-		{
-			i++;
-			len++;
-		}
+		len = sep_len(str, sep, &i);
 		result[k] = malloc((len + 1) * (sizeof(char)));
 		if(result[k] == NULL)
-			return (NULL);
+			
+			return (ft_null_maker(result, k , i));
 		result[k][len] = '\0';
+		result[k] = memcpy(result[k], &str[i - len], len);
 		while(str[i] && str[i] == sep)
 			i++;
 		k++;
 	}
+	return(result);
 }
 
 char	**ft_split(const char *str, char sep)
@@ -72,147 +94,26 @@ char	**ft_split(const char *str, char sep)
 	sep_count = sep_check(str, sep);
 	result = malloc((sep_count + 1) * sizeof(char*));
 	if(result == NULL)
-		return (NULL);	
-	result[sep_count] = NULL;
-
-	if(malloc_maker(str, sep, result, sep_count) == NULL)
 	{
-//		ft_null_maker(result)
-		return(NULL);
-	}	
-/*
-	i = 0;
-	k = 0;
-	while(k < sep_count)
-	{
-		while(str[i] && str[i] != sep)
-			i++;
-		result[k] = malloc_maker(i);
-		if(result[k] == NULL)
-			return (NULL);
-//			ft_NULL_maker. 	
-		k++;
+		free(result);
+		return (NULL);
 	}
-*/
+	result[sep_count] = NULL;
+	i = 0;	
+	while(str[i] && str[i] == sep)
+		i++;
+	if(malloc_maker(&str[i], sep, result, sep_count) == NULL)
+		return(NULL);
 	printf("sep_count: '%d'\n", sep_count);
 	for(i = 0; result[i] != NULL; i++)
 	{
 		printf("result[%d]: '%s'\n", i, result[i]);
 	
 	}
-
 	return(result);
-}
-// this version is wrong because if "baaaba" is given, it will make 3 arrays, its adding the last a's before '\0'
-int     main(void)
-{
-	char	sep = 'a'; 
-	char	str001[] = "abbbbbb";
-	char	str002[] = "aaa";
-	char	str003[] = "aaaaaaaa";
-	char	str004[] = "abab";
-	char	str005[] = "aaaaabaaaab";
-
-	char	str006[] = "bab";
-	char	str007[] = "baaaaab";
-	char	str008[] = "aabaaab";
-	char	str009[] = "b";
-	char	str010[] = "ba";
-	char	str011[] = "aba";
-
-	printf("str001:'%s'\n", str001);
-	ft_split(str001, sep);
-	printf("\n\n");
-
-	printf("str002:'%s'\n", str002);
-	ft_split(str002, sep);
-	printf("\n\n");
-
-	printf("str003:'%s'\n", str003);
-	ft_split(str003, sep);
-	printf("\n\n");
-
-	printf("str004:'%s'\n", str004);
-	ft_split(str004, sep);
-	printf("\n\n");
-
-	printf("str005:'%s'\n", str005);
-	ft_split(str005, sep);
-	printf("\n\n");
-
-
-	printf("str006:'%s'\n", str006);
-	ft_split(str006, sep);
-	printf("\n\n");
-
-	printf("str007:'%s'\n", str007);
-	ft_split(str007, sep);
-	printf("\n\n");
-
-	printf("str008:'%s'\n", str008);
-	ft_split(str008, sep);
-	printf("\n\n");
-
-	printf("str009:'%s'\n", str009);
-	ft_split(str009, sep);
-	printf("\n\n");
-
-	printf("str010:'%s'\n", str010);
-	ft_split(str010, sep);
-	printf("\n\n");
-
-
-	printf("str011:'%s'\n", str011);
-	ft_split(str011, sep);
-	printf("\n\n");
 }
 
 /*thanks for shash for clean code idea*/
-/*
- while (str[i])
-    {
-        if(memchr(&str[i], sep, 1) != NULL && str[i] != '\0')
-        {
-            while(memchr(&str[i], sep, 1) != NULL && str[i] != '\0')
-                i++;
-            if(str[i] != '\0')
-                sep_count++;
-        }
-        i++;
-    }
-*/
-
-/*
-static char	*malloc_maker(const char *str, char sep, int *i)
-{
-	int sub_length;
-	char *result;
-	int k;
-
-	k = 0;
-	sub_length = 0;
-	while (str[*i] != sep && str[*i] != '\0')
-	{
-		sub_length++;
-		*i += 1;
-	}
-	result = malloc((sub_length + 1) * sizeof(char));
-	if(result == NULL)
-		return(NULL);
-	result[sub_length] = '\0';
-	*i -= sub_length;
-	while(k < sub_length)
-	{
-		result[k] = str[*i];
-		k++;
-		*i += 1;
-	} 
-	return (result);
-
-}
-*/
-
-
 
 /*
 static int sep_check(const char *str, char sep)

@@ -26,6 +26,9 @@ char	*ft_strjoin(const char *str1, const char *str2)
 	int	len2;
 	char	*result;
 
+	if(!str1 || !str2)
+		return(NULL);
+		
 	len1 = strlen(str1);
 	len2 = strlen(str2);
 	
@@ -38,7 +41,7 @@ char	*ft_strjoin(const char *str1, const char *str2)
 	return(result);
 }
 
-
+/*
 int	main()
 {
 	char	ptr001[] = {"012345"};
@@ -104,4 +107,4 @@ int	main()
 	printf("str1:'%s' str2:'%s'\n", ptr013, ptr014);
 	printf("result: '%s'\n\n", result);
 	free(result);
-}
+}*/
