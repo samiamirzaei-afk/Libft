@@ -1,41 +1,50 @@
-#include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ammirzae <ammirzae@student.42vienna.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/27 17:19:30 by ammirzae          #+#    #+#             */
+/*   Updated: 2026/04/27 17:19:32 by ammirzae         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "libft.h"
 
 static void	ft_strcopy(char *result, const char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while(str[i])
+	while (str[i])
 	{
-		result[i] = str[i]; 
+		result[i] = str[i];
 		i++;
 	}
 }
 
 char	*ft_strjoin(const char *str1, const char *str2)
 {
-	int	len1;
-	int	len2;
+	int		len1;
+	int		len2;
 	char	*result;
 
-	if(!str1 || !str2)
-		return(NULL);
-		
+	if (!str1 || !str2)
+		return (NULL);
 	len1 = strlen(str1);
 	len2 = strlen(str2);
-	
 	result = malloc((len1 + len2 + 1) * sizeof(char));
-	if(result == NULL)
-		return(NULL);
-	result[len1+len2] = '\0';
+	if (result == NULL)
+		return (NULL);
+	result[len1 + len2] = '\0';
 	ft_strcopy(&result[0], str1);
 	ft_strcopy(&result[len1], str2);
-	return(result);
+	return (result);
 }
 
 /*
-int	main()
+int	main(void)
 {
 	char	ptr001[] = {"012345"};
 	char	ptr002[] = {"6789"};
@@ -71,7 +80,7 @@ int	main()
 	printf("str1:'%s' str2:'%s'\n", ptr007, ptr008);
 	printf("result: '%s'\n\n", result);
 	free(result);
-	
+
 
 	char	ptr009[] = {NULL};
 	char	ptr010[] = {"hey"};
