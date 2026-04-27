@@ -31,5 +31,8 @@ ft_.c
 ft_.c
 ft_.c
 
-MAKE CALLOC TESTER BETTER!!!!
+
+
+bzero fur splut fail
+str_join use strlcpy.
 for part two check for fail checks if not ptr return  if (!ptr) return ;

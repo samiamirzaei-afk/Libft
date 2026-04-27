@@ -1,10 +1,5 @@
-#include <unistd.h>
-#include <stdio.h>
-#include <fcntl.h>
-#include <string.h>
-#include <stdlib.h>
-#include <errno.h>
-//		h   abc
+#include "libft.h"
+
 static int ft_needle_check(char hey, const char *needles)
 {
 	int i;
@@ -60,11 +55,8 @@ char	*ft_strtrim(const char *hey, const char *needles)
 		}
 	}
 	return(result);
-
-
-
 }
-
+/*
 int	main()
 {
 	
@@ -92,3 +84,4 @@ int	main()
 
 	printf("'%d'\n", str003[1]);
 }
+*/
