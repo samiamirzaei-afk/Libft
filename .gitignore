@@ -5,3 +5,5 @@ a.out
 //.testers
 .memmov vs memcpy
 done3
+*.d
+*.o
