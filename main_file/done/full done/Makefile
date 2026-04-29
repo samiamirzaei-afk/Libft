@@ -24,10 +24,7 @@ ARFLAG = rcs
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(AR) $(ARFLAG) $(NAME) -o  $(OBJ)
-
-%.o: %.c
-	$(CC) $(CCFLAG) $(CPPFLAG) -c $< -o $@
+	$(AR) $(ARFLAG) -o $(NAME) $?
 
 clean:
 	rm -f $(OBJ) $(DEPS)
@@ -38,5 +35,4 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
-
-
+-include $(DEPS)

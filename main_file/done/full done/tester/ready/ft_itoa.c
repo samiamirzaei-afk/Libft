@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
+#include "libft.h"
 
 static void	ft_temp_fill(int *i, int *count, int *temp)
 {
@@ -70,7 +70,6 @@ char	*ft_itoa(int count)
 	ft_result_fill(&result, temp, i);
 	return (result);
 }
-
 /*
 #include <limits.h>
 #include <stdio.h>
@@ -203,9 +202,9 @@ int	main(void)
 	// Test 20: malloc failure simulation (can't force, but check)
 	num20 = 12345;
 	ptr020 = ft_itoa(num20);
-	printf("Test 20 - input: '%d' (checking malloc)\n", num20);
+	printf("Test 20 - input: '%d'\n", num20);
 	if (ptr020 == NULL)
-		printf("result: NULL (malloc failed)\n");
+		printf("result: NULL \n");
 	else
 		printf("result: '%s'\n", ptr020);
 	free(ptr020);

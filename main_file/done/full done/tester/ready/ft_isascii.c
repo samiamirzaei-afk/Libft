@@ -1,37 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ammirzae <ammirzae@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/27 16:53:36 by ammirzae          #+#    #+#             */
-/*   Updated: 2026/04/27 17:00:39 by ammirzae         ###   ########.fr       */
+/*   Created: 2026/04/20 15:55:28 by ammirzae          #+#    #+#             */
+/*   Updated: 2026/04/25 15:23:57 by ammirzae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_putstr_fd(char *s, int fd)
+int	ft_isascii(int num)
 {
-	if (!s)
-		return ;
-	while (*s)
-	{
-		write(fd, &(*s), 1);
-		s++;
-	}
+	if (num >= 0 && num <= 127)
+		return (1);
+	return (0);
 }
 /*
-#include <unistd.h>
-
-int	main(void)
+#include <stdio.h>
+int main(void)
 {
-	char	*str001;
-	char	str002[] = "hello world";
-
-	str001 = NULL;
-	ft_putstr_fd(str002, 1);
-	ft_putstr_fd(str001, 1);
+    for (int i = 0; i < 128; i++)
+    {
+        printf("testing:'%c' %d\n", i , ft_isascii(i));
+    }
+    
+    return 0;
 }
 */

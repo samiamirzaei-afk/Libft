@@ -6,7 +6,7 @@
 /*   By: ammirzae <ammirzae@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 10:26:09 by ammirzae          #+#    #+#             */
-/*   Updated: 2026/04/21 10:52:27 by ammirzae         ###   ########.fr       */
+/*   Updated: 2026/04/29 10:17:15 by ammirzae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_bzero(void *s, size_t length)
 	size_t			i;
 	unsigned char	*ptr;
 
-	if(!s)
+	if (!s)
 		return ;
 	ptr = (unsigned char *)s;
 	i = 0;
@@ -34,24 +34,19 @@ int	main(void)
 {
 	char	str000[] = "ab";
 	char	str001[] = "aaaaaabbaahellabo alljbabab";
-	char	*str002 = (void*)0;	
+	char	*str002;
 	char	str004[] = "llhello world I am a computerll";
 
+	str002 = (void*)0;
 	printf("before:'%s' len:'4'\n", str000);
 	ft_bzero(str000, 4);
 	printf("after:'%s'\n\n", str000);
-
-
 	printf("before:'%s' len:'8'\n", str001);
 	ft_bzero(str001, 8);
 	printf("after:'%s'\n\n", str001);
-
-
 	printf("before:'%s' len:'7'\n", str002);
 	ft_bzero(str002, 7);
 	printf("after:'%s'\n\n", str002);
-
-
 	printf("before:'%s' len:'4'\n", str004);
 	ft_bzero(str004, 4);
 	printf("after:'%s'\n\n", str004);

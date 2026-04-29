@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ammirzae <ammirzae@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/21 11:03:50 by ammirzae          #+#    #+#             */
-/*   Updated: 2026/04/21 12:32:37 by ammirzae         ###   ########.fr       */
+/*   Created: 2026/04/27 16:53:36 by ammirzae          #+#    #+#             */
+/*   Updated: 2026/04/27 17:00:39 by ammirzae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t length)
+void	ft_putstr_fd(char *s, int fd)
 {
-	size_t			i;
-	unsigned char	*ptr_dest;
-	unsigned char	*ptr_src;
-
-	ptr_dest = (unsigned char *)dest;
-	ptr_src = (unsigned char *)src;
-	i = 0;
-	while (i < length)
+	if (!s)
+		return ;
+	while (*s)
 	{
-		*ptr_dest = *ptr_src;
-		i++;
-		ptr_dest += 1;
-		ptr_src += 1;
+		write(fd, &(*s), 1);
+		s++;
 	}
-	return (dest);
 }
+
+/*
+int	main(void)
+{
+	char	*str001;
+	char	str002[] = "hello world";
+
+	str001 = NULL;
+	ft_putstr_fd(str002, 1);
+	ft_putstr_fd(str001, 1);
+}
+*/

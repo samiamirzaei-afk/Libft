@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ammirzae <ammirzae@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 15:55:28 by ammirzae          #+#    #+#             */
-/*   Updated: 2026/04/25 15:23:57 by ammirzae         ###   ########.fr       */
+/*   Created: 2026/04/20 16:53:14 by ammirzae          #+#    #+#             */
+/*   Updated: 2026/04/20 17:07:21 by ammirzae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int num)
+int	ft_isprint(int number)
 {
-	if (num >= 0 && num <= 127)
+	if (number >= ' ' && number <= '~')
 		return (1);
 	return (0);
 }
+/*
+#include <stdio.h>
+int main(void)
+{
+    for (int i = 0; i < 128; i++)
+    {
+        printf("testing:'%c' %d\n", i , ft_isprint(i));
+    }
+    
+    return 0;
+}
+*/

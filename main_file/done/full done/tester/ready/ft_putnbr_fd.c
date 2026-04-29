@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ammirzae <ammirzae@student.42vienna.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/29 14:53:11 by ammirzae          #+#    #+#             */
+/*   Updated: 2026/04/29 14:53:31 by ammirzae         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static int	ft_max_min_check(int nb, int fd)
@@ -15,7 +27,7 @@ static int	ft_max_min_check(int nb, int fd)
 	return (0);
 }
 
-void ft_putnbr_fd(int nb, int fd)
+void	ft_putnbr_fd(int nb, int fd)
 {
 	int		i;
 	char	itoa[12];
@@ -42,6 +54,7 @@ void ft_putnbr_fd(int nb, int fd)
 		i--;
 	}
 }
+/*
 int	main(void)
 {
 	ft_putnbr_fd(0, 1);
@@ -58,4 +71,4 @@ int	main(void)
 		ft_putnbr_fd(2147483646, 1); write(1, "\n", 1);
 		ft_putnbr_fd(2147483645, 1); write(1, "\n", 1);
 		ft_putnbr_fd(2147483644, 1); write(1, "\n", 1);
-}
+}*/

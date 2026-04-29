@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ammirzae <ammirzae@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 13:59:02 by ammirzae          #+#    #+#             */
-/*   Updated: 2026/04/20 13:59:05 by ammirzae         ###   ########.fr       */
+/*   Created: 2026/04/29 11:07:08 by ammirzae          #+#    #+#             */
+/*   Updated: 2026/04/29 11:24:18 by ammirzae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(int num)
+#include "libft.h"
+
+t_list	*ft_lstnew(void *content)
 {
-	if (num >= '0' && num <= '9')
-		return (1);
-	if (num >= 'A' && num <= 'Z')
-		return (1);
-	if (num >= 'a' && num <= 'z')
-		return (1);
-	return (0);
+	t_list	*next_node;
+
+	next_node = ft_calloc(1 * sizeof(t_list));
+	if (!next_node)
+		return (NULL);
+	next_node->content = content;
+	return (next_node);
 }

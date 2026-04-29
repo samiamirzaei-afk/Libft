@@ -29,9 +29,6 @@ size_t	ft_strlen(const char *str)
 }
 
 
-void  *ft_memchr(const void *str, int number, size_t size);
-void	*memchr(const void *str, int number, size_t size);
-
 int	main(void)
 {
 	int		i;
@@ -67,9 +64,13 @@ int	main(void)
 	
 	
 
-	char	sstr1[] = {"Hast du etwas Zeit für mich? Dann singe ich ein Lied für dich Von 99 Luftballons; Auf ihrem Weg zum Horizont. Denkst du vielleicht grad an mich?"};
+	char	sstr1[] = {"Hast du etwas Zeit für mich? Dann singe
+ ich ein Lied für dich Von 99 Luftballons; Auf ihrem Weg zum 
+Horizont. Denkst du vielleicht grad an mich?"};
 	char	sstr2[10] = {"."};
-	char	sstr3[] = {"Hast du etwas Zeit für mich? Dann singe ich ein Lied für dich Von 99 Luftballons; Auf ihrem Weg zum Horizont. Denkst du vielleicht grad an mich?"};
+	char	sstr3[] = {"Hast du etwas Zeit für mich? Dann singe
+ ich ein Lied für dich Von 99 Luftballons; Auf ihrem Weg zum
+ Horizont. Denkst du vielleicht grad an mich?"};
 	char	sstr4[10] = {"."};
 	
 	
@@ -111,9 +112,13 @@ int	main(void)
 	
 	
 
-	char	sstr22[] = {"Hast du etwas Zeit für mich? Dann singe ich ein Lied für dich Von 99 Luftballons; Auf ihrem Weg zum Horizont. Denkst du vielleicht grad an mich?"};
+	char	sstr22[] = {"Hast du etwas Zeit für mich? Dann singe
+ ich ein Lied für dich Von 99 Luftballons; Auf ihrem Weg zum
+ Horizont. Denkst du vielleicht grad an mich?"};
 	char	sstr33[10] = {""};
-	char	sstr44[] = {"Hast du etwas Zeit für mich? Dann singe ich ein Lied für dich Von 99 Luftballons; Auf ihrem Weg zum Horizont. Denkst du vielleicht grad an mich?"};
+	char	sstr44[] = {"Hast du etwas Zeit für mich? Dann singe
+ ich ein Lied für dich Von 99 Luftballons; Auf ihrem Weg zum
+ Horizont. Denkst du vielleicht grad an mich?"};
 	char	sstr55[10] = {""};
 	
 	

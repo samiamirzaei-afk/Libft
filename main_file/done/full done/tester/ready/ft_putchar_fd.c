@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ammirzae <ammirzae@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 16:53:14 by ammirzae          #+#    #+#             */
-/*   Updated: 2026/04/20 17:07:21 by ammirzae         ###   ########.fr       */
+/*   Created: 2026/04/27 16:51:19 by ammirzae          #+#    #+#             */
+/*   Updated: 2026/04/27 16:53:16 by ammirzae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int number)
+#include "libft.h"
+
+void	ft_putchar_fd(char c, int fd)
 {
-	if (number >= ' ' && number <= '~')
-		return (1);
-	return (0);
+	write(fd, &c, 1);
 }
+/*
+int	main(void)
+{
+	ft_putchar_fd('0', 1);
+	ft_putchar_fd('\n', 1);
+}*/

@@ -6,7 +6,7 @@
 /*   By: ammirzae <ammirzae@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/24 12:40:33 by ammirzae          #+#    #+#             */
-/*   Updated: 2026/04/24 19:08:09 by ammirzae         ###   ########.fr       */
+/*   Updated: 2026/04/29 10:18:21 by ammirzae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	result = ft_memset(result, 0, (nmemb * size));
 	return (result);
 }
-
+/*
 int main(void)
 {
 	// Test 1: Normal allocation with char
@@ -59,7 +59,7 @@ int main(void)
 		ptr002[i] = '5';
 	}
 	ptr002[i] = '\0';
-	printf("Test 1 - size: '%d', type:char (1 byte:'%lu')\n", size, sizeof(char));
+printf("Test 1 - size: '%d', type:char (1 byte:'%lu')\n", size, sizeof(char));
 	printf("ft_calloc: '%s'\n", ptr001);
 	printf("calloc:    '%s'\n", ptr002);
 	printf("Both zero-initialized before fill: %s\n\n",
@@ -67,7 +67,6 @@ int main(void)
 	free(ptr001);
 	free(ptr002);
 
-	// Test 2: Normal allocation with int (4 bytes)
 	int	*ptr003;
 	int	*ptr004;
 	size = 5;
@@ -79,13 +78,13 @@ int main(void)
 		ptr003[i] = 42;
 		ptr004[i] = 42;
 	}
-	printf("Test 2 - size: '%d', type: int ('%lu' bytes)\n", size, sizeof(int));
+printf("Test 2 - size: '%d', type: int ('%lu' bytes)\n", size, sizeof(int));
 	printf("ft_calloc first 5 values: %d %d %d %d %d\n",
 		ptr003[0], ptr003[1], ptr003[2], ptr003[3], ptr003[4]);
 	printf("calloc first 5 values:    %d %d %d %d %d\n",
 		ptr004[0], ptr004[1], ptr004[2], ptr004[3], ptr004[4]);
-	printf("Zero-initialization before fill: %s\n\n",
-		(memcmp(ptr003, ptr004, size * sizeof(int)) == 0) ? "PASS" : "FAIL");
+printf("Zero-initialization before fill: %s\n\n",
+	(memcmp(ptr003, ptr004, size * sizeof(int)) == 0) ? "PASS" : "FAIL");
 	free(ptr003);
 	free(ptr004);
 
@@ -96,10 +95,8 @@ int main(void)
 	ptr005 = ft_calloc(0, sizeof(char));
 	ptr006 = calloc(0, sizeof(char));
 	printf("Test 3 - size: 0, type: char\n");
-	printf("ft_calloc returned: %s\n", (ptr005 == NULL) ? "NULL" : "non-NULL");
-	printf("calloc returned:    %s\n", (ptr006 == NULL) ? "NULL" : "non-NULL");
-	printf("Behavior matches: %s\n\n",
-		((ptr005 == NULL && ptr006 == NULL) || (ptr005 != NULL && ptr006 != NULL)) ? "PASS" : "FAIL");
+printf("ft_calloc returned: %s\n", (ptr005 == NULL) ? "NULL" : "non-NULL");
+printf("calloc returned:    %s\n", (ptr006 == NULL) ? "NULL" : "non-NULL");
 	if (ptr005) free(ptr005);
 	if (ptr006) free(ptr006);
 
@@ -111,9 +108,11 @@ int main(void)
 	ptr007 = ft_calloc(large_size, sizeof(char));
 	ptr008 = calloc(large_size, sizeof(char));
 	printf("Test 4 - very large size: %zu bytes\n", large_size);
-	printf("ft_calloc returned: %s\n", (ptr007 == NULL) ? "NULL (FAIL)" : "non-NULL");
-	printf("calloc returned:    %s\n", (ptr008 == NULL) ? "NULL (FAIL)" : "non-NULL");
-	printf("Both returned NULL: %s\n\n",
+printf("ft_calloc returned: %s\n", 
+(ptr007 == NULL) ? "NULL (FAIL)" : "non-NULL");
+printf("calloc returned:    %s\n", 
+(ptr008 == NULL) ? "NULL (FAIL)" : "non-NULL");
+printf("Both returned NULL: %s\n\n",
 		(ptr007 == NULL && ptr008 == NULL) ? "PASS" : "FAIL");
 
 	// Test 5: Zero-initialization verification with struct
@@ -128,15 +127,9 @@ int main(void)
 
 	ptr009 = ft_calloc(struct_size, sizeof(struct test_struct));
 	ptr010 = calloc(struct_size, sizeof(struct test_struct));
-	printf("Test 5 - struct with int, char, long (should be all zeros)\n");
-	printf("ft_calloc - first struct: a=%d, b=%d, c=%ld\n",
-		ptr009[0].a, ptr009[0].b, ptr009[0].c);
-	printf("calloc - first struct:    a=%d, b=%d, c=%ld\n",
-		ptr010[0].a, ptr010[0].b, ptr010[0].c);
-	printf("All fields zero: %s\n",
-		(ptr009[0].a == 0 && ptr009[0].b == 0 && ptr009[0].c == 0) ? "PASS" : "FAIL");
-	printf("Both implementations match: %s\n\n",
-		(memcmp(ptr009, ptr010, struct_size * sizeof(struct test_struct)) == 0) ? "PASS" : "FAIL");
+printf("Test 5 - struct with int, char, long (should be all zeros)\n");
+printf("ft_calloc%d,%d,%ld\n",ptr009[0].a, ptr009[0].b, ptr009[0].c);
+printf("calloc%d,%d,%ld\n",ptr010[0].a, ptr010[0].b, ptr010[0].c);
 	free(ptr009);
 	free(ptr010);
 
@@ -148,10 +141,9 @@ int main(void)
 
 	ptr011 = ft_calloc(nmemb, bigsize);
 	ptr012 = calloc(nmemb, bigsize);
-	printf("Test 6 - nmemb=%zu, size=%zu (should detect overflow)\n", nmemb, bigsize);
-	printf("ft_calloc returned: %s\n", (ptr011 == NULL) ? "NULL (PASS)" : "non-NULL (FAIL)");
-	printf("calloc returned:    %s\n", (ptr012 == NULL) ? "NULL (PASS)" : "non-NULL (FAIL)");
-	printf("\n");
+printf("nmemb=%zu, size=%zu\n", nmemb, bigsize);
 
+printf("\n");
 	return (0);
 }
+*/

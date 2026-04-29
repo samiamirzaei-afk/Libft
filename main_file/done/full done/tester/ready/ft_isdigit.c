@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ammirzae <ammirzae@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/23 11:34:50 by ammirzae          #+#    #+#             */
-/*   Updated: 2026/04/25 15:22:12 by ammirzae         ###   ########.fr       */
+/*   Created: 2026/04/20 15:50:42 by ammirzae          #+#    #+#             */
+/*   Updated: 2026/04/20 15:51:32 by ammirzae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	*ft_memchr(const void *str, int number, size_t size)
+int	ft_isdigit(int num)
 {
-	unsigned char	*ptr_str;
-	size_t			i;
-
-	ptr_str = (unsigned char *)str;
-	i = 0;
-	if (ptr_str[i] == (unsigned char)number)
-		return (&ptr_str[i]);
-	while (i < size)
-	{
-		if (ptr_str[i] == (unsigned char)number)
-			return (&ptr_str[i]);
-		i++;
-	}
-	return ((void *)0);
+	if (num >= '0' && num <= '9')
+		return (1);
+	return (0);
 }
+/*
+#include <stdio.h>
+int main(void)
+{
+    for (int i = 0; i < 128; i++)
+    {
+        printf("testing:'%c' %d\n", i , ft_isdigit(i));
+    }
+    
+    return 0;
+}
+*/
