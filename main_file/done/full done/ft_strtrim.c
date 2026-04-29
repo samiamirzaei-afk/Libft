@@ -41,7 +41,7 @@ static void ft_index_fill(const char *hey, const char *needles, size_t *index, s
 	}
 }	
 //		
-//		this is a long test to check if this all works out real good is
+
 char	*ft_strtrim(const char *hey, const char *needles)
 {
 	size_t i;

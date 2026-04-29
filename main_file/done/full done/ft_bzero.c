@@ -17,6 +17,8 @@ void	ft_bzero(void *s, size_t length)
 	size_t			i;
 	unsigned char	*ptr;
 
+	if(!s)
+		return ;
 	ptr = (unsigned char *)s;
 	i = 0;
 	while (i < length)
@@ -26,3 +28,32 @@ void	ft_bzero(void *s, size_t length)
 		ptr += 1;
 	}
 }
+
+/*
+int	main(void)
+{
+	char	str000[] = "ab";
+	char	str001[] = "aaaaaabbaahellabo alljbabab";
+	char	*str002 = (void*)0;	
+	char	str004[] = "llhello world I am a computerll";
+
+	printf("before:'%s' len:'4'\n", str000);
+	ft_bzero(str000, 4);
+	printf("after:'%s'\n\n", str000);
+
+
+	printf("before:'%s' len:'8'\n", str001);
+	ft_bzero(str001, 8);
+	printf("after:'%s'\n\n", str001);
+
+
+	printf("before:'%s' len:'7'\n", str002);
+	ft_bzero(str002, 7);
+	printf("after:'%s'\n\n", str002);
+
+
+	printf("before:'%s' len:'4'\n", str004);
+	ft_bzero(str004, 4);
+	printf("after:'%s'\n\n", str004);
+}
+*/
