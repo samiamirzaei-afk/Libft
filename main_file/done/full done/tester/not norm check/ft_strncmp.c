@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tester.c                                           :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ammirzae <ammirzae@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 15:52:57 by ammirzae          #+#    #+#             */
-/*   Updated: 2026/04/22 17:36:58 by ammirzae         ###   ########.fr       */
+/*   Created: 2026/02/04 14:22:19 by ammirzae          #+#    #+#             */
+/*   Updated: 2026/04/22 17:37:41 by ammirzae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdio.h>
-#include <string.h>
-#include <unistd.h>
+#include "libft.h"
 
-
-#define LIBBSD_OVERLAY	1
-
-size_t	ft_strlen(const char *str)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	if (n == 0)
+		return (0);
+	while ((s1[i] != '\0' || s2[i] != '\0') && i < n)
+	{
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
 		i++;
-	return (i);
+	}
+	return (0);
 }
-
-
-int  ft_strncmp(const char *s1, const char *s2, size_t n);
-int	strncmp(const char *s1, const char *s2, size_t n);
 
 int	main(void)
 {
@@ -66,11 +62,10 @@ int	main(void)
 	printf("\n\n");
 	
 	
-
-	char	sstr1[] = {"Hast du etwas Zeit für mich? Dann singe ich ein Lied für dich Von 99 Luftballons; Auf ihrem Weg zum Horizont. Denkst du vielleicht grad an mich?"};
-	char	sstr2[10] = {"."};
-	char	sstr3[] = {"Hast du etwas Zeit für mich? Dann singe ich ein Lied für dich Von 99 Luftballons; Auf ihrem Weg zum Horizont. Denkst du vielleicht grad an mich?"};
-	char	sstr4[10] = {"."};
+char sstr1[] = {"Hast du etwas Zeit für mich? Dann singe ich ein Lied"};
+	char	sstr2[10] = {"?"};
+char sstr3[] = {"Hast du etwas Zeit für mich? Dann singe ich ein Lied"};
+	char	sstr4[10] = {"?"};
 	
 	
 	printf("strings before: '%s'  '%s'\n", sstr1, sstr2);
@@ -111,10 +106,10 @@ int	main(void)
 	
 	
 
-	char	sstr22[] = {"Hast du etwas Zeit für mich? Dann singe ich ein Lied für dich Von 99 Luftballons; Auf ihrem Weg zum Horizont. Denkst du vielleicht grad an mich?"};
-	char	sstr33[10] = {""};
-	char	sstr44[] = {"Hast du etwas Zeit für mich? Dann singe ich ein Lied für dich Von 99 Luftballons; Auf ihrem Weg zum Horizont. Denkst du vielleicht grad an mich?"};
-	char	sstr55[10] = {""};
+char sstr22[] = {"Hast du etwas Zeit für mich? Dann singe ich ein Lied."};
+	char	*sstr33 = NULL;
+char sstr44[] = {"Hast du etwas Zeit für mich? Dann singe ich ein Lied."};
+	char	*sstr55 = NULL;
 	
 	
 	printf("strings before: '%s'  '%s'\n", sstr1, sstr2);
@@ -122,13 +117,5 @@ int	main(void)
 	ft_len =ft_strncmp(sstr44, sstr55, 9999);
 	printf("strrchr: '%d'\n",len);
 	printf("ft_strrchr: '%d'\n\n", ft_len);
-
-
 }
 
-/*	while (argv[1][i] != '\0')
-	{
-		printf("%c = %d\n", argv[1][i], ft_isalpha(argv[1][i]));
-		i++;
-	}
-*/
