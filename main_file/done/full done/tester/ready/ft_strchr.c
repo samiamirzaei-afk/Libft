@@ -6,7 +6,7 @@
 /*   By: ammirzae <ammirzae@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 14:35:50 by ammirzae          #+#    #+#             */
-/*   Updated: 2026/04/22 16:11:37 by ammirzae         ###   ########.fr       */
+/*   Updated: 2026/04/30 09:55:46 by ammirzae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 char	*ft_strchr(const char *str, int num)
 {
 	int	i;
-	
-	if (!str)
-		return (NULL);
+
 	i = 0;
 	if (str[i] == num)
 		return ((char *)&str[i]);

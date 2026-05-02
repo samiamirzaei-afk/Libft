@@ -46,52 +46,119 @@ char	sep = 'a';
 	char	str009[] = "b";
 	char	str010[] = "ba";
 	char	str011[] = "aba";
+	char	**result;
+	int i;
 
 	printf("str001:'%s'\n", str001);
-	ft_split(str001, sep);
+	result = ft_split(str001, sep);
+	for(i = 0; result[i] != NULL; i++)
+		printf("result[%d]:'%s'\n", i, result[i]);
 	printf("\n\n");
-
+for(i = 0; result[i] != NULL; i++)
+		free(result[i]);
+	free(result);
+/*
 	printf("str002:'%s'\n", str002);
-	ft_split(str002, sep);
+	result = ft_split(str002, sep);
+	for(i = 0; result[i] != NULL; i++)
+		printf("result[%d]:'%s'\n", i, result[i]);
 	printf("\n\n");
+	for(i = 0; result[i] != NULL; i++)
+		free(result[i]);
+
+free(result);
 
 	printf("str003:'%s'\n", str003);
-	ft_split(str003, sep);
+	result = ft_split(str003, sep);
+	for(i = 0; result[i] != NULL; i++)
+		printf("result[%d]:'%s'\n", i, result[i]);
 	printf("\n\n");
+	for(i = 0; result[i] != NULL; i++)
+		free(result[i]);
+
+free(result);
 
 	printf("str004:'%s'\n", str004);
-	ft_split(str004, sep);
+	result = ft_split(str004, sep);
+	for(i = 0; result[i] != NULL; i++)
+		printf("result[%d]:'%s'\n", i, result[i]);
 	printf("\n\n");
+	for(i = 0; result[i] != NULL; i++)
+		free(result[i]);
+
+free(result);
 
 	printf("str005:'%s'\n", str005);
-	ft_split(str005, sep);
+	result = ft_split(str005, sep);
+	for(i = 0; result[i] != NULL; i++)
+		printf("result[%d]:'%s'\n", i, result[i]);
 	printf("\n\n");
+	for(i = 0; result[i] != NULL; i++)
+		free(result[i]);
+
+free(result);
 
 
 	printf("str006:'%s'\n", str006);
-	ft_split(str006, sep);
+	result = ft_split(str006, sep);
+	for(i = 0; result[i] != NULL; i++)
+		printf("result[%d]:'%s'\n", i, result[i]);
 	printf("\n\n");
+	for(i = 0; result[i] != NULL; i++)
+		free(result[i]);
+
+free(result);
 
 	printf("str007:'%s'\n", str007);
-	ft_split(str007, sep);
+	result = ft_split(str007, sep);
+	for(i = 0; result[i] != NULL; i++)
+		printf("result[%d]:'%s'\n", i, result[i]);
 	printf("\n\n");
+	for(i = 0; result[i] != NULL; i++)
+		free(result[i]);
+
+free(result);
 
 	printf("str008:'%s'\n", str008);
-	ft_split(str008, sep);
+	result = ft_split(str008, sep);
+	for(i = 0; result[i] != NULL; i++)
+		printf("result[%d]:'%s'\n", i, result[i]);
 	printf("\n\n");
+	for(i = 0; result[i] != NULL; i++)
+		free(result[i]);
+
+free(result);
 
 	printf("str009:'%s'\n", str009);
-	ft_split(str009, sep);
+	result = ft_split(str009, sep);
+	for(i = 0; result[i] != NULL; i++)
+		printf("result[%d]:'%s'\n", i, result[i]);
 	printf("\n\n");
+	for(i = 0; result[i] != NULL; i++)
+		free(result[i]);
+
+free(result);
 
 	printf("str010:'%s'\n", str010);
-	ft_split(str010, sep);
+	result = ft_split(str010, sep);
+	for(i = 0; result[i] != NULL; i++)
+		printf("result[%d]:'%s'\n", i, result[i]);
 	printf("\n\n");
+	for(i = 0; result[i] != NULL; i++)
+		free(result[i]);
+
+free(result);
 
 
 	printf("str011:'%s'\n", str011);
-	ft_split(str011, sep);
+	result = ft_split(str011, sep);
+	for(i = 0; result[i] != NULL; i++)
+		printf("result[%d]:'%s'\n", i, result[i]);
 	printf("\n\n");
+	for(i = 0; result[i] != NULL; i++)
+		free(result[i]);
+
+free(result);
 
 	char	str012[] = "";
 	char	str013[] = "abcde";
@@ -117,90 +184,221 @@ char	sep = 'a';
 
 	sep = '\0';
 	printf("str012:'%s' sep is '\\0'\n", str012);
-	ft_split(str012, sep);
+	result = ft_split(str012, sep);
+	for(i = 0; result[i] != NULL; i++)
+		printf("result[%d]:'%s'\n", i, result[i]);
 	printf("\n\n");
+for(i = 0; result[i] != NULL; i++)
+		free(result[i]);
+free(result);
 
 	printf("str013:'%s' sep is '\\0'\n", str013);
-	ft_split(str013, sep);
+	result = ft_split(str013, sep);
+	for(i = 0; result[i] != NULL; i++)
+		printf("result[%d]:'%s'\n", i, result[i]);
 	printf("\n\n");
+
+
+for(i = 0; result[i] != NULL; i++)
+		free(result[i]);
+free(result);
 
 	printf("str014:'%s' sep is '\\0'\n", str014);
-	ft_split(str014, sep);
+	result = ft_split(str014, sep);
+	for(i = 0; result[i] != NULL; i++)
+		printf("result[%d]:'%s'\n", i, result[i]);
 	printf("\n\n");
+for(i = 0; result[i] != NULL; i++)
+		free(result[i]);
+
+free(result);
 
 	printf("str015:'%s' sep is '\\0'\n", str015);
-	ft_split(str015, sep);
+	result = ft_split(str015, sep);
+	for(i = 0; result[i] != NULL; i++)
+		printf("result[%d]:'%s'\n", i, result[i]);
 	printf("\n\n");
+	for(i = 0; result[i] != NULL; i++)
+		free(result[i]);
+
+free(result);
 
 	printf("str016:'%s' sep is '\\0'\n", str016);
-	ft_split(str016, sep);
+	result = ft_split(str016, sep);
+	for(i = 0; result[i] != NULL; i++)
+		printf("result[%d]:'%s'\n", i, result[i]);
 	printf("\n\n");
+	for(i = 0; result[i] != NULL; i++)
+		free(result[i]);
+
+free(result);
+
 
 	sep = 'a';
 	printf("str017:'%s'\n", str017);
-	ft_split(str017, sep);
+	result = ft_split(str017, sep);
+	for(i = 0; result[i] != NULL; i++)
+		printf("result[%d]:'%s'\n", i, result[i]);
 	printf("\n\n");
+	for(i = 0; result[i] != NULL; i++)
+		free(result[i]);
+
+free(result);
 
 	printf("str018:'%s'\n", str018);
-	ft_split(str018, sep);
+	result = ft_split(str018, sep);
+	for(i = 0; result[i] != NULL; i++)
+		printf("result[%d]:'%s'\n", i, result[i]);
 	printf("\n\n");
+for(i = 0; result[i] != NULL; i++)
+		free(result[i]);
+
+free(result);
 
 	printf("str019:'%s'\n", str019);
-	ft_split(str019, sep);
+	result = ft_split(str019, sep);
+	for(i = 0; result[i] != NULL; i++)
+		printf("result[%d]:'%s'\n", i, result[i]);
 	printf("\n\n");
+for(i = 0; result[i] != NULL; i++)
+		free(result[i]);
+
+free(result);
 
 	printf("str020:'%s'\n", str020);
-	ft_split(str020, sep);
+	result = ft_split(str020, sep);
+	for(i = 0; result[i] != NULL; i++)
+		printf("result[%d]:'%s'\n", i, result[i]);
 	printf("\n\n");
+for(i = 0; result[i] != NULL; i++)
+		free(result[i]);
+
+free(result);
 
 	printf("str021:'%s'\n", str021);
-	ft_split(str021, sep);
+	result = ft_split(str021, sep);
+	for(i = 0; result[i] != NULL; i++)
+		printf("result[%d]:'%s'\n", i, result[i]);
 	printf("\n\n");
+for(i = 0; result[i] != NULL; i++)
+		free(result[i]);
+
+free(result);
+
 
 	printf("str022:'%s'\n", str022);
-	ft_split(str022, sep);
+	result = ft_split(str022, sep);
+	for(i = 0; result[i] != NULL; i++)
+		printf("result[%d]:'%s'\n", i, result[i]);
 	printf("\n\n");
+for(i = 0; result[i] != NULL; i++)
+		free(result[i]);
+
+free(result);
 
 	printf("str023:'%s'\n", str023);
-	ft_split(str023, sep);
+	result = ft_split(str023, sep);
+	for(i = 0; result[i] != NULL; i++)
+		printf("result[%d]:'%s'\n", i, result[i]);
 	printf("\n\n");
+for(i = 0; result[i] != NULL; i++)
+		free(result[i]);
+
+free(result);
 
 	printf("str024:'%s'\n", str024);
-	ft_split(str024, sep);
+	result = ft_split(str024, sep);
+	for(i = 0; result[i] != NULL; i++)
+		printf("result[%d]:'%s'\n", i, result[i]);
 	printf("\n\n");
+for(i = 0; result[i] != NULL; i++)
+		free(result[i]);
+
+free(result);
 
 	printf("str025:'%s'\n", str025);
-	ft_split(str025, sep);
+	result = ft_split(str025, sep);
+	for(i = 0; result[i] != NULL; i++)
+		printf("result[%d]:'%s'\n", i, result[i]);
 	printf("\n\n");
+for(i = 0; result[i] != NULL; i++)
+		free(result[i]);
+
+free(result);
+
 
 	printf("str026:'%s'\n", str026);
-	ft_split(str026, sep);
+	result = ft_split(str026, sep);
+	for(i = 0; result[i] != NULL; i++)
+		printf("result[%d]:'%s'\n", i, result[i]);
 	printf("\n\n");
+for(i = 0; result[i] != NULL; i++)
+		free(result[i]);
+
+free(result);
 
 	printf("str027:'%s'\n", str027);
-	ft_split(str027, sep);
+	result = ft_split(str027, sep);
+	for(i = 0; result[i] != NULL; i++)
+		printf("result[%d]:'%s'\n", i, result[i]);
 	printf("\n\n");
+for(i = 0; result[i] != NULL; i++)
+		free(result[i]);
+
+free(result);
 
 	printf("str028:'%s'\n", str028);
-	ft_split(str028, sep);
+	result = ft_split(str028, sep);
+	for(i = 0; result[i] != NULL; i++)
+		printf("result[%d]:'%s'\n", i, result[i]);
 	printf("\n\n");
+for(i = 0; result[i] != NULL; i++)
+		free(result[i]);
+
+free(result);
 
 	printf("str029:'%s'\n", str029);
-	ft_split(str029, sep);
+	result = ft_split(str029, sep);
+	for(i = 0; result[i] != NULL; i++)
+		printf("result[%d]:'%s'\n", i, result[i]);
 	printf("\n\n");
+for(i = 0; result[i] != NULL; i++)
+		free(result[i]);
+
+free(result);
 
 	printf("str030:'%s'\n", str030);
-	ft_split(str030, sep);
+	result = ft_split(str030, sep);
+	for(i = 0; result[i] != NULL; i++)
+		printf("result[%d]:'%s'\n", i, result[i]);
 	printf("\n\n");
+for(i = 0; result[i] != NULL; i++)
+		free(result[i]);
+
+free(result);
 
 
 	printf("str031:'%s'\n", str031);
-	ft_split(str031, sep);
+	result = ft_split(str031, sep);
+	for(i = 0; result[i] != NULL; i++)
+		printf("result[%d]:'%s'\n", i, result[i]);
 	printf("\n\n");
+for(i = 0; result[i] != NULL; i++)
+		free(result[i]);
+
+free(result);
+
 
 	printf("str032:'%s'\n", str032);
-	ft_split(str032, sep);
+	result = ft_split(str032, sep);
+	for(i = 0; result[i] != NULL; i++)
+		printf("result[%d]:'%s'\n", i, result[i]);
 	printf("\n\n");
+for(i = 0; result[i] != NULL; i++)
+		free(result[i]);
 
+free(result);
+*/
 	return (0);
+}
 }

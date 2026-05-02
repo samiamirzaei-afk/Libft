@@ -27,7 +27,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (0);
 }
-
+/*
 int	main(void)
 {
 	int		i;
@@ -118,4 +118,4 @@ char sstr44[] = {"Hast du etwas Zeit für mich? Dann singe ich ein Lied."};
 	printf("strrchr: '%d'\n",len);
 	printf("ft_strrchr: '%d'\n\n", ft_len);
 }
-
+*/

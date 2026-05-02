@@ -6,7 +6,7 @@
 /*   By: ammirzae <ammirzae@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 08:55:16 by ammirzae          #+#    #+#             */
-/*   Updated: 2026/04/21 09:55:33 by ammirzae         ###   ########.fr       */
+/*   Updated: 2026/04/30 09:55:15 by ammirzae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memset(void *s, int c, size_t length)
 	unsigned char	*ptr;
 
 	if (s == NULL)
-		return (s);	
+		return (s);
 	ptr = (unsigned char *)s;
 	i = 0;
 	while (i < length)
