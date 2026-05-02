@@ -24,10 +24,10 @@ MALLOC FOR THESE:
 ft_calloc.c  ✓
 ft_strdup.c  ✓
 
-ft_.c
-ft_.c
-ft_.c
-ft_.c
+ft_lstnew.c
+ft_lstadd_front.c
+ft_lstsize.c
+ft_lstlast.c
 ft_.c
 ft_.c
 

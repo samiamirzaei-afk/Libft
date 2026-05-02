@@ -6,7 +6,7 @@
 /*   By: ammirzae <ammirzae@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 17:07:33 by ammirzae          #+#    #+#             */
-/*   Updated: 2026/04/29 10:49:44 by ammirzae         ###   ########.fr       */
+/*   Updated: 2026/05/02 17:32:00 by ammirzae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,12 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }	t_list;
+
+t_list	*ft_lstnew(void *content);
+void	ft_lstadd_front( t_list **list, t_list *new);
+int		ft_lstsize(t_list *list);
+t_list	*ft_lstlast(t_list *list);
+void	ft_lstadd_back(t_list **list, t_list *new);
 int		ft_atoi(char *str);
 void	ft_bzero(void *s, size_t length);
 void	*ft_calloc(size_t nmemb, size_t size);
