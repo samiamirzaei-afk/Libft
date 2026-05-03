@@ -36,7 +36,7 @@ void	ft_putnbr_fd(int nb, int fd)
 		return ;
 	if (nb < 0)
 	{
-		write(1, "-", 1);
+		write(fd, "-", 1);
 		nb *= -1;
 	}
 	itoa[0] = '\0';
@@ -50,7 +50,7 @@ void	ft_putnbr_fd(int nb, int fd)
 	itoa[i] = nb + '0';
 	while (itoa[i] != '\0')
 	{
-		write(1, &itoa[i], 1);
+		write(fd, &itoa[i], 1);
 		i--;
 	}
 }

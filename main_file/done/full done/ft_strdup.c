@@ -21,7 +21,7 @@ char	*ft_strdup(char *src)
 	i = 0;
 	length = ft_strlen(src);
 	copy = malloc((length + 1) * sizeof(char));
-	if (copy == NULL)
+	if (!copy)
 		return (NULL);
 	copy[length] = '\0';
 	while (src[i] != '\0')

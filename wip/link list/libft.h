@@ -29,6 +29,7 @@ void	ft_lstadd_front( t_list **list, t_list *new);
 int		ft_lstsize(t_list *list);
 t_list	*ft_lstlast(t_list *list);
 void	ft_lstadd_back(t_list **list, t_list *new);
+void ft_lstdelone(t_list *trash, void (*del)(void*));
 int		ft_atoi(char *str);
 void	ft_bzero(void *s, size_t length);
 void	*ft_calloc(size_t nmemb, size_t size);

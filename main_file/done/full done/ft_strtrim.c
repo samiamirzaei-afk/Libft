@@ -48,6 +48,7 @@ char	*ft_strtrim(const char *hey, const char *needles)
 	size_t index[2];
 	char *result;
 	size_t	result_len;
+	size_t k;
 
 	if(!hey || !needles)
 		return(NULL);
@@ -59,7 +60,7 @@ char	*ft_strtrim(const char *hey, const char *needles)
 		return(NULL);
 	result[result_len] = '\0';
 	i  = index[0];
-	size_t k;
+	
 	k = 0;	
 	while(k < result_len)
 	{

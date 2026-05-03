@@ -17,11 +17,13 @@ char	*ft_strrchr(const char *str, int num)
 	int	str_length;
 
 	str_length = (ft_strlen(str));
+	if(num == '\0')
+		return ((char*)&str[str_length + 1]);
 	while (str_length >= 0)
 	{
 		if (str[str_length] == (unsigned char)num)
 			return ((char *)&str[str_length]);
 		str_length--;
 	}
-	return ((void *)0);
+	return (NULL);
 }

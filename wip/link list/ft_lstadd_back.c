@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 void ft_lstadd_back(t_list **list, t_list *new)
 {
@@ -24,7 +25,46 @@ void ft_lstadd_back(t_list **list, t_list *new)
 	ptr->next = new;
 }
 
-int main()
+
+void print_list(t_list *list)
+{
+	t_list *next_node;
+	next_node = list;
+
+	while (next_node)
+	{
+		if (next_node->content)
+			printf("%s\n", (char *)next_node->content);
+		next_node = next_node->next;
+	}
+}
+
+void	del(void *trash)
+{
+	(void)trash;
+}
+
+
+int main(void)
+{
+	t_list *list;
+	t_list *node;
+
+	list = ft_lstnew("node 1");
+	ft_lstadd_back(&list, ft_lstnew("node 2"));
+	ft_lstadd_back(&list, ft_lstnew("node 3"));
+	ft_lstadd_front(&list, ft_lstnew("node 4"));
+	ft_lstadd_front(&list, ft_lstnew("node 5"));
+	print_list(list);
+	node = list->next->next->next;
+	print_list(node);
+	ft_lstdelone(node, *del);
+	print_list(list);
+
+	return 0;
+}
+
+/*int main()
 {
 	t_list *list01;
 	t_list *list02;
@@ -34,6 +74,8 @@ int main()
 	t_list *list06;
 	t_list *list07;
 	t_list *ptr;
+
+	list01 = ft_lstnew("node 1");
 		
 
 	list01= malloc(sizeof(t_list));
@@ -92,4 +134,4 @@ int main()
 printf("\n");
 
 	
-}
+}*/

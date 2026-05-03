@@ -17,7 +17,7 @@ char	*ft_strchr(const char *str, int num)
 	int	i;
 
 	i = 0;
-	if (str[i] == num)
+	if (str[i] == (unsigned char)num)
 		return ((char *)&str[i]);
 	while (str[i])
 	{
@@ -25,6 +25,8 @@ char	*ft_strchr(const char *str, int num)
 			return ((char *)&str[i]);
 		i++;
 	}
+	if((unsigned char)num == '\0')
+		return((char *)&str[i]);
 	return (NULL);
 }
 /*
