@@ -6,7 +6,7 @@
 /*   By: ammirzae <ammirzae@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 14:46:21 by ammirzae          #+#    #+#             */
-/*   Updated: 2026/04/30 10:09:11 by ammirzae         ###   ########.fr       */
+/*   Updated: 2026/05/04 07:14:08 by ammirzae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strnstr(const char *hey, const char *needle, size_t length)
 	if (needle[0] == '\0')
 		return ((char *)hey);
 	if (!hey || length < 1)
-		return ((NULL);
+		return (NULL);
 	i = 0;
 	k = 0;
 	while (hey[i] && i < length)

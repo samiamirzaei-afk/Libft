@@ -6,7 +6,7 @@
 /*   By: ammirzae <ammirzae@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 14:35:50 by ammirzae          #+#    #+#             */
-/*   Updated: 2026/04/30 09:55:46 by ammirzae         ###   ########.fr       */
+/*   Updated: 2026/05/04 07:18:11 by ammirzae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ char	*ft_strchr(const char *str, int num)
 			return ((char *)&str[i]);
 		i++;
 	}
-	if((unsigned char)num == '\0')
-		return((char *)&str[i]);
+	if ((unsigned char)num == '\0')
+		return ((char *)&str[i]);
 	return (NULL);
 }
 /*
