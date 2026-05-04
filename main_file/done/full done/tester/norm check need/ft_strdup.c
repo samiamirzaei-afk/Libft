@@ -31,7 +31,7 @@ char	*ft_strdup(char *src)
 	}
 	return (copy);
 }
-
+/*
 int	main(int argc, char **argv)
 {
 	char	*str;
@@ -45,3 +45,4 @@ int	main(int argc, char **argv)
 	printf("%s\n", str);
 	free(str);
 }
+*/

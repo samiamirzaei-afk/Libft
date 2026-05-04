@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+//#include "libft.h"
+#include <stdlib.h>
+#include <string.h>
 
 static void	ft_strcopy(char *result, const char *str)
 {
@@ -32,8 +34,8 @@ char	*ft_strjoin(const char *str1, const char *str2)
 
 	if (!str1 || !str2)
 		return (NULL);
-	len1 = strlen(str1);
-	len2 = strlen(str2);
+	len1 = ft_strlen(str1);
+	len2 = ft_strlen(str2);
 	result = malloc((len1 + len2 + 1) * sizeof(char));
 	if (result == NULL)
 		return (NULL);
@@ -42,7 +44,21 @@ char	*ft_strjoin(const char *str1, const char *str2)
 	ft_strcopy(&result[len1], str2);
 	return (result);
 }
-
+/*
+#include <unistd.h>
+#include <stdio.h>
+int     main(int argc, char **argv)
+{
+        if (argc < 2)
+        {
+                printf ("please provide an 2 strings \n");
+                return (1);
+        }
+        char *result = ft_strjoin(argv[1], argv[2]);
+	printf("%s\n", result);
+	free(result);
+}
+*/
 /*
 int	main(void)
 {

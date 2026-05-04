@@ -39,8 +39,7 @@ static void ft_index_fill(const char *hey, const char *needles, size_t *index, s
 		while(hey[*i] && (ft_needle_check(hey[*i], needles) == -1))
 			*i += 1;
 	}
-}	
-//		
+}		
 
 char	*ft_strtrim(const char *hey, const char *needles)
 {
@@ -99,7 +98,7 @@ int	main()
 	free(result);
 	
 	
-	char	str002[] = "Hast du etwas Zeit für mich? Dann singe ich ein Lied für dich, Von 99 Luftballons Auf ihrem Weg zum Horizont. Denkst du vielleicht grad′ an mich?";
+char	str002[] = "Hast du etwas Zeit für mich? Denkst du vielleicht grad′ an mich?";
 	char	str003[] = "H?ac";
 	result = ft_strtrim(str002, str003);
 	printf("str1:'%s' sep:'%s'\n", str002, str003);

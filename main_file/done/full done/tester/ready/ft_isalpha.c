@@ -19,7 +19,7 @@ int	ft_isalpha(int number)
 	}
 	return (0);
 }
-
+/*
 #include <stdio.h>
 int main(void)
 {
@@ -30,4 +30,4 @@ int main(void)
     
     return 0;
 }
-
+*/

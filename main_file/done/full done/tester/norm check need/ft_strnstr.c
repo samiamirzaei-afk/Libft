@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
-#include <stddef.h>
+#include "libft.h"
 
 char	*ft_strnstr(const char *hey, const char *needle, size_t length)
 {
@@ -19,11 +18,11 @@ char	*ft_strnstr(const char *hey, const char *needle, size_t length)
 	size_t	k;
 
 	if (!hey || needle)
-		reutn (NULL);
+		return (NULL);
 	if (needle[0] == '\0')
 		return ((char *)hey);
 	if (!hey || length < 1)
-		return ((void *)0);
+		return ((NULL);
 	i = 0;
 	k = 0;
 	while (hey[i] && i < length)
@@ -40,7 +39,7 @@ char	*ft_strnstr(const char *hey, const char *needle, size_t length)
 	}
 	return (NULL);
 }
-
+/*
 #define LIBBSD_OVERLAY	1
 #include <stdio.h>
 #include <string.h>
@@ -136,6 +135,5 @@ char sstr44[] = {"Hast du etwas Zeit für mich? Dann singe ich ein Lied."};
 	ft_len =ft_strnstr(sstr44, sstr55, 9999);
 	printf("strrchr: '%s'\n",len);
 	printf("ft_strrchr: '%s'\n\n", ft_len);
-
-
 }
+*/
