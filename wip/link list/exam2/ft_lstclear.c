@@ -12,9 +12,8 @@ void ft_lstclear(t_list **head, void (*del)(void*))
 	{
 		ptr2 = ptr;
 		ptr = ptr->next;
-		del(ptr->content);
-		free(*head);
-		*head = ptr;
+		del(ptr2->content);
+		free(ptr2);
 	}
-
+	*head = NULL;
 }

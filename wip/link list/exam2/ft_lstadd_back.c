@@ -12,6 +12,6 @@ void ft_lstadd_back(t_list **head, t_list *new)
 	}
 	ptr = *head;
 	while(ptr->next != NULL)
-		*head = ptr->next;
-	new = ptr->next;
+		ptr = ptr->next;
+	 ptr->next = new;
 }

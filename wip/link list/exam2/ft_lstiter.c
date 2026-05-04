@@ -6,7 +6,17 @@ void ft_lstiter(t_list *list, void (*f)(void *))
 		return ;
 	while (list != NULL)
 	{
-		f(list->next);
+		f(list->content);
 		list = list->next;
 	}
 }
+/*
+void	f(void *content)
+{
+	while(content)
+	{
+		content = '0';
+		content += 1;
+	}
+}
+*/

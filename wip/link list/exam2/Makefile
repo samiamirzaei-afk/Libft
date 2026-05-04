@@ -17,5 +17,5 @@ FLAGS = -Wall -Wextra
 all: $(NAME)
 
 $(NAME): $(SRC)
-	cc $(FLAGS) $(SRC) -o $(NAME)
+	cc $(FLAGS) $(SRC) -o $(NAME) -g
 
