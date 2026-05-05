@@ -1,0 +1,156 @@
+#include "libft.h"
+// goes through the list, does *f on content, makes new list from f then deletes node
+
+
+
+t_list *ft_lstmap(t_list *list, void *(*ft_f)(void *), void(*del)(void*))
+{
+	t_list *ptr_copy;
+	t_list *start;
+	t_list *list_start;
+
+	if (!list || !ft_f || del)
+		return (NULL)
+	ptr_copy = list;
+	start = NULL;
+	list_start = list;
+
+	while(list)
+	{
+		ptr_copy = ft_lstnew(ft_f(list->content));
+		if (ptr_copy == NULL)
+		{
+			ft_lstclear(&start, del)
+			return(NULL);
+		}
+		ft_lstadd_back(&start, *ptr_copy);
+		list = list->next;
+	}
+	return (start);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+t_list *ft_lstmap(t_list *list, void *(*ft_f)(void *), void(*del)(void*))
+{
+	t_list *ptr_copy;
+	t_list *ptr;
+	if(!list || ft_f)
+		return (NULL);
+	ptr_copy = NULL;
+	while(list)
+	{
+		ptr = ft_lstnew(ft_f(list->content));
+		if (!ptr)
+		{
+			ft_lstclear(&ptr, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&ptr_copy, ptr);
+		lst = lst->next;
+	}
+	return(copy);
+}
+*/
+
+
+/*
+static t_list *list_maker(void)
+{
+	t_list *ptr;
+
+	ptr = malloc(sizeof(t_list));
+	if(ptr = NULL)
+		return (NULL);
+	return(ptr);
+
+}
+
+
+static t_list *copy_maker(t_list *list, void *(*ft_f)(void *))
+{
+	t_list *ptr_copy;
+	t_list *ptr_list;
+	t_list *copy_start;
+	
+	ptr_copy = list;
+	ptr_list = list;
+	copy_start = ptr1;
+	ptr_copy->content = ft_f(list->content);
+	while(ptr_list != NULL)
+	{
+		ptr_copy = list_maker();
+		if(ptr_copy)
+			return(NULL);
+		ptr_copy->content = (char *)ft_f(ptr_list->content);
+		if(ptr_copy)
+		{
+			ft_lstclear(	
+		
+		
+		
+			return(NULL);
+		}
+		ptr_list = ptr_list->next;
+		ptr_copy->next = ptr_list;
+		ptr_copy = ptr_list
+	}
+	return (copy_start);
+}
+
+t_list *ft_lstmap(t_list *list, void *(*ft_f)(void *), void(*del)(void*))
+{
+	t_list *ptr1;
+	t_list *ptr2;
+	t_list *copy;
+
+	if(!list)
+		return NULL;
+	copy = copy_maker(list, ft_f);
+	if(!copy)
+		return (NULL);
+	ptr1 = list;
+	ptr2 = list;
+	while(ptr1 != NULL)
+	{
+		if(ptr1->content)
+			del(ptr1->content);
+		ptr1 = ptr1->next;
+		free(ptr2);
+		ptr2 = ptr1;
+	}
+	return(copy);
+}
+*/

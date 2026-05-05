@@ -5,13 +5,40 @@ void del(void *content)
 {
     free(content);
 }
-void	f(void *content)
+void	ft_f(void *content)
 {
 	char *i;
 	i = (char*)content;
 		*i = '0';
 		i += 1;	
 		*i = '-';
+}
+void	*ft_f2(void *content)
+{
+	char *ptr;
+	char *str;
+	int i;
+	int k;
+
+	i = 0;
+	ptr = (char*)content;
+	while(ptr[i])
+		i++;
+	if((str = malloc((i + 1 + 3) * sizeof(char))))
+		return (NULL);
+	str[0] = 'C';
+	str[1] = 'P';
+	str[2] = 'Y';
+	k = 3;
+	while(ptr[i])
+	{
+		str[k] = ptr[i];
+		k++;
+		i++;
+	}
+	str[k] = '\0';
+	return(str);
+
 }
 char	*str_malloc()
 {
@@ -134,62 +161,65 @@ int	main()
 	printf("%s", 	(char*)(link01->next->next->content));
 	printf("%s", 	(char*)(link01->next->next->next->content));
 	printf("%s", 	(char*)(link01->next->next->next->next->content));
-	printf("%s", 	(char*)(link01->next->next->next->next->next->content));
-	printf("%s", 	(char*)(link01->next->next->next->next->next->next->content));
-	printf("%s", 	(char*)(link01->next->next->next->next->next->next->next->content));
-	printf("%s'\n\n", (char*)(link01->next->next->next->next->next->next->next->next->content));
+printf("%s", (char*)(link01->next->next->next->next->next->content));
+printf("%s", (char*)(link01->next->next->next->next->next->next->content));
+printf("%s", (char*)(link01->next->next->next->next->next->next->next->content));
+printf("%s'\n\n", (char*)(link01->next->next->next->next->next->next->next
+			->next->content));
 	
 	
 	printf("===after lstadd_front===  'link10' \n");
 	head = link01;
 	ft_lstadd_front(&head,  link10);
-
 	for (i = 0; head != NULL && i < 20; i++)
 	{
   	 printf("%s", (char*)head->content);
    	 head = head->next;
 	}
 	printf("\n\n");
-
 	head = link10;
 
+	
 	printf("===after lstadd_back=== 'link 13'\n");
 	ft_lstadd_back(&head, link13);
-	
 	head = link10;
-
 	for (i = 0; head != NULL && i < 30; i++)
 	{
   	 printf("%s", (char*)head->content);
    	 head = head->next;
 	}
 	printf("\n\n");
-
-
+	
+	
+	
 	printf("===after lstsize=== 'from link10'\n");
-
 	int k;
 	 k = ft_lstsize(link10);
-	printf("size: %d\n",k);
-
-
+	printf("size: %d\n\n",k);
 	head = link10;
+
+
 	printf("===ft_lstdelone=== 'link 13'\n");
 	ft_lstdelone(link13, del);
 	link09->next = NULL;
-
-  	 printf("TRUST ME BRO");
+	for (i = 0; head != NULL && i < 13; i++)
+	{
+  	 printf("%s", (char*)head->content);
+   	 head = head->next;
+	}
 	printf("\n\n");
 	head = link10;
-	printf("===ft_lstlast=== 'link 13'\n");
+
+
+	printf("===ft_lstlast=== 'link 10'\n");
 	head = ft_lstlast(head);
 	printf("current list: %s\n",(char *)head->content);
-	
 	printf("\n\n");
 	head = link10;
-	printf("===ft_lstiter=== 'link 05'\n");
-	ft_lstiter(link05, f);
 
+
+	printf("===ft_lstiter=== 'link 05'\n");
+	ft_lstiter(link05, ft_f);
 	for (i = 0; head != NULL && i < 13; i++)
 	{
   	 printf("%s", (char*)head->content);
@@ -197,17 +227,38 @@ int	main()
 	}
 	printf("\n\n");
 
-	printf("===ft_lstclear=== 'link 05'\n");
-	head = link05;
-	ft_lstclear(&head, del);
-	head = link01;
-	link04->next = NULL;
 
-	for (i = 0; head && i < 6; i++)
+	printf("===ft_lstclear=== 'link 07'\n");
+	head = link07;
+	ft_lstclear(&head, del);
+	head = link10;
+	link06->next = NULL;
+	for (i = 0; head && i < 10; i++)
 	{
   	 printf("%s",(char*)head->content);
    	 head = head->next;
 	}
 
+	printf("\n\n");
 
+	printf("===ft_lstclear=== 'link 05'\n");
+
+	head = link05;
+	link11 = ft_lstmap(link05, ft_f2, del);
+	link04->next = NULL;	
+	
+	head = link10;
+//	link10->next = NULL;
+	for (i = 0; head && i < 6; i++)
+	{
+  	 printf("%s",(char*)head->content);
+   	 head = head->next;
+	}
+	printf("\n");
+	head = link11;
+	for (i = 0; head && i < 6; i++)
+	{
+  	 printf("%s",(char*)head->content);
+   	 head = head->next;
+	}
 }
