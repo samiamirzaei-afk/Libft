@@ -1,4 +1,5 @@
 #include "libft.h"
+#include <string.h>
 
 void del(void *content)
 {
@@ -12,6 +13,14 @@ void	f(void *content)
 		i += 1;	
 		*i = '-';
 }
+char	*str_malloc()
+{
+	char *str;
+	if ((str = malloc((4+1) * sizeof(char))) == NULL)
+		return (0);
+	return(str);
+}
+	
 int	main()
 {
 	t_list *link01;
@@ -34,22 +43,37 @@ int	main()
 	char str02[] = "2-";
 	char str03[] = "3-";
 	char str04[] = "4-";
-	char str05[] = "5-";
-	char str06[] = "6-";
-	char str07[] = "7-";
-	char str08[] = "8-";
-	char str09[] = "9-";
-	char str10[] = "10-";
-	char str11[] = "11-";
-	char str12[] = "12-";
+	char *str05;
+	char *str06;
+	char *str07;
+	char *str08;
+	char *str09;
+	char *str10;
+	char *str11;
+	char *str12;
 	char *str13;
 
-		if ((str13 = malloc((3+1) * sizeof(char))) == NULL)
-			return (0);
-		str13[0] = '1';
-		str13[1] = '3';
-		str13[2] = '-';
-		str13[3] = '\0';
+	str05 = str_malloc();
+	str06 = str_malloc();
+	str07 = str_malloc();
+	str08 = str_malloc();
+	str09 = str_malloc();
+	str10 = str_malloc();
+	str11 = str_malloc();
+	str12 = str_malloc();
+	str13 = str_malloc();
+
+	str05 = strcpy(str05, "5-");
+	str06 = strcpy(str06, "6-");
+	str07 = strcpy(str07, "7-");
+	str08 = strcpy(str08, "8-");
+	str09 = strcpy(str09, "9-");
+	str10 = strcpy(str10, "10-");
+	str11 = strcpy(str11, "11-");
+	str12 = strcpy(str12, "12-");
+	str13 = strcpy(str13, "13-");
+
+
 
 	link01 = ft_lstnew(str01);
 	if (!link01)
@@ -176,5 +200,14 @@ int	main()
 	printf("===ft_lstclear=== 'link 05'\n");
 	head = link05;
 	ft_lstclear(&head, del);
+	head = link01;
+	link04->next = NULL;
+
+	for (i = 0; head && i < 6; i++)
+	{
+  	 printf("%s",(char*)head->content);
+   	 head = head->next;
+	}
+
 
 }
