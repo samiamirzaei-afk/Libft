@@ -6,7 +6,7 @@
 /*   By: ammirzae <ammirzae@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 11:34:50 by ammirzae          #+#    #+#             */
-/*   Updated: 2026/04/29 12:31:36 by ammirzae         ###   ########.fr       */
+/*   Updated: 2026/05/06 10:25:50 by ammirzae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memchr(const void *str, int number, size_t size)
 	unsigned char	*ptr_str;
 	size_t			i;
 
-	if (!str)
+	if (size == 0)
 		return (NULL);
 	ptr_str = (unsigned char *)str;
 	i = 0;

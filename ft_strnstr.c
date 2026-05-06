@@ -6,7 +6,7 @@
 /*   By: ammirzae <ammirzae@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 14:46:21 by ammirzae          #+#    #+#             */
-/*   Updated: 2026/05/04 07:14:08 by ammirzae         ###   ########.fr       */
+/*   Updated: 2026/05/06 14:30:10 by ammirzae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,25 +17,26 @@ char	*ft_strnstr(const char *hey, const char *needle, size_t length)
 	size_t	i;
 	size_t	k;
 
-	if (!hey || needle)
+	if (!hey || !needle)
 		return (NULL);
 	if (needle[0] == '\0')
 		return ((char *)hey);
-	if (!hey || length < 1)
+	if (length == 0)
 		return (NULL);
 	i = 0;
-	k = 0;
 	while (hey[i] && i < length)
 	{
 		k = 0;
-		while (hey[i] == needle[k] && hey[i] != '\0')
+		while (hey[i] != needle[0] && hey[i] && needle[k])
+			i++;
+		while (hey[i] == needle[k] && hey[i] && needle[k])
 		{
 			i++;
 			k++;
 		}
-		if (needle[k] == '\0')
+		if (needle[k] == '\0' && i <= length)
 			return ((char *)&hey[i - k]);
-		i++;
+		i -= k - 1;
 	}
 	return (NULL);
 }
@@ -43,22 +44,22 @@ char	*ft_strnstr(const char *hey, const char *needle, size_t length)
 #define LIBBSD_OVERLAY	1
 #include <stdio.h>
 #include <string.h>
-#include <unistd.h>
+//#include <unistd.h>
 
 int	main(void)
 {
 	int		i;
-	char	str[] = {"0123456789"};
-	char	str2[20] = {"234"};
-	char	str3[] = {"0123456789"};
-	char	str4[20] = {"234"};
+	char	str[] = {"aaabcabcd"};
+	char	str2[20] = {"cd"};
+	char	str3[] = {"aaabcabcd"};
+	char	str4[20] = {"cd"};
 	char		*len;
 	char		*ft_len;
 	
 	i = 0;
 	printf("strings before: '%s'  '%s'\n", str, str2);
-	len = strnstr(str, str2, 3);
-	ft_len = ft_strnstr(str3, str4, 3);
+	len = strnstr(str, str2, 8);
+	ft_len = ft_strnstr(str3, str4, 8);
 	printf("strnstr:'%s'\n",len);
 	printf("ft_strnstr:'%s'\n\n",ft_len);
 

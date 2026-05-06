@@ -6,18 +6,18 @@
 /*   By: ammirzae <ammirzae@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 17:48:47 by ammirzae          #+#    #+#             */
-/*   Updated: 2026/04/29 10:15:31 by ammirzae         ###   ########.fr       */
+/*   Updated: 2026/05/06 17:18:40 by ammirzae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_negative_add(char *str, int *i)
+static int	ft_negative_add(const char *str, int *i)
 {
 	int	negative;
 
 	negative = 1;
-	while (str[*i] == '-' || str[*i] == '+')
+	if (str[*i] == '-' || str[*i] == '+')
 	{
 		if (str[*i] == '-')
 			negative *= -1;
@@ -33,7 +33,7 @@ static int	ft_isspace(char letter)
 	return (-1);
 }
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	i;
 	int	negative;
@@ -59,6 +59,10 @@ int	ft_atoi(char *str)
 /*
 #include <stdio.h>
 #include <stdlib.h>
+
+
+
+
 
 int	main(void)
 {

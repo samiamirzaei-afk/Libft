@@ -6,7 +6,7 @@
 /*   By: ammirzae <ammirzae@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/04 07:15:51 by ammirzae          #+#    #+#             */
-/*   Updated: 2026/05/04 07:16:51 by ammirzae         ###   ########.fr       */
+/*   Updated: 2026/05/06 17:21:10 by ammirzae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ static void	ft_index_fill(const char *hey, const char *needles, size_t *index,
 
 	start = -1;
 	index[1] = 0;
+	index[0] = 0;
 	while (hey[*i])
 	{
 		needle_count = 0;
@@ -66,7 +67,10 @@ char	*ft_strtrim(const char *hey, const char *needles)
 		return (NULL);
 	i = 0;
 	ft_index_fill(hey, needles, index, &i);
-	result_len = i - (index[0] + index[1]);
+	if (i < (index[0] + index[1]))
+		result_len = 0;
+	else
+		result_len = i - (index[0] + index[1]);
 	result = malloc((result_len + 1) * sizeof(char));
 	if (!result)
 		return (NULL);
@@ -74,11 +78,7 @@ char	*ft_strtrim(const char *hey, const char *needles)
 	i = index[0];
 	k = 0;
 	while (k < result_len)
-	{
-		result[k] = hey[i];
-		i++;
-		k++;
-	}
+		result[k++] = hey[i++];
 	return (result);
 }
 /*
@@ -116,5 +116,18 @@ char str002[]="Hast du etwas Zeit für mich? Denkst du vielleicht grad an mich?"
 	printf("str1:'%s' sep:'%s'\n", str002, str003);
 	printf("result: '%s'\n\n", result);
 	free(result);
+
+
+
+char str004[]="   xxx   xxx";
+	char	str005[] = " x";
+	result = ft_strtrim(str004, str005);
+	printf("str1:'%s' sep:'%s'\n", str004, str005);
+	printf("result: '%s'\n\n", result);
+	free(result);
+
+
+
+
 }
 */

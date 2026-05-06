@@ -6,7 +6,7 @@
 /*   By: ammirzae <ammirzae@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 17:07:33 by ammirzae          #+#    #+#             */
-/*   Updated: 2026/05/06 09:36:07 by ammirzae         ###   ########.fr       */
+/*   Updated: 2026/05/06 17:23:38 by ammirzae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,11 @@ void	ft_lstclear(t_list **head, void (*del)(void*));
 void	ft_lstiter(t_list *list, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *),
 			void (*del)(void *));
+void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
-int		ft_atoi(char *str);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int s, int fd);
+int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t length);
 void	*ft_calloc(size_t nmemb, size_t size);
 int		ft_isalnum(int num);
@@ -49,6 +52,9 @@ void	*ft_memcpy(void *dest, const void *src, size_t length);
 void	*ft_memmove(void *dest, const void *src, size_t length);
 void	*ft_memset(void *s, int c, size_t length);
 char	**ft_split(const char *str, char sep);
+char	*ft_itoa(int n);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_strchr(const char *str, int num);
 char	*ft_strdup(char *src);
 char	*ft_strjoin(const char *str1, const char *str2);

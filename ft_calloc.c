@@ -6,7 +6,7 @@
 /*   By: ammirzae <ammirzae@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/24 12:40:33 by ammirzae          #+#    #+#             */
-/*   Updated: 2026/04/29 10:18:21 by ammirzae         ###   ########.fr       */
+/*   Updated: 2026/05/06 17:20:15 by ammirzae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ static int	ft_checks(size_t nmemb, size_t size)
 	size_t	result;
 	size_t	temp;
 
+	if (size == 0 || nmemb == 0)
+		return (0);
 	result = -1;
 	temp = result / size;
 	if (nmemb > temp)
@@ -28,10 +30,10 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*result;
 
-	if (ft_checks(nmemb, size) == 0)
-		return (NULL);
 	if (nmemb <= 0 || size <= 0)
 		return (malloc(nmemb * size));
+	if (ft_checks(nmemb, size) == 0)
+		return (NULL);
 	result = malloc(nmemb * size);
 	if (result == NULL)
 		return (NULL);

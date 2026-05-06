@@ -6,7 +6,7 @@
 /*   By: ammirzae <ammirzae@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/02 16:24:12 by ammirzae          #+#    #+#             */
-/*   Updated: 2026/05/06 09:39:13 by ammirzae         ###   ########.fr       */
+/*   Updated: 2026/05/06 16:47:35 by ammirzae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	ft_lstadd_front(t_list **list, t_list *new)
 	if (!list || !new)
 		return ;
 	new->next = *list;
+	*list = new;
 	return ;
 }
 /*

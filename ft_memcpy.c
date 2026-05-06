@@ -6,7 +6,7 @@
 /*   By: ammirzae <ammirzae@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 11:03:50 by ammirzae          #+#    #+#             */
-/*   Updated: 2026/04/29 14:40:40 by ammirzae         ###   ########.fr       */
+/*   Updated: 2026/05/06 10:05:28 by ammirzae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void	*ft_memcpy(void *dest, const void *src, size_t length)
 	unsigned char	*ptr_dest;
 	unsigned char	*ptr_src;
 
-	if (!dest || !src)
-		return (NULL);
 	ptr_dest = (unsigned char *)dest;
 	ptr_src = (unsigned char *)src;
 	i = 0;
