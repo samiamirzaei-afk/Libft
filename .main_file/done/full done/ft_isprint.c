@@ -1,0 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ammirzae <ammirzae@student.42vienna.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/20 16:53:14 by ammirzae          #+#    #+#             */
+/*   Updated: 2026/04/20 17:07:21 by ammirzae         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+int	ft_isprint(int number)
+{
+	if (number >= ' ' && number <= '~')
+		return (1);
+	return (0);
+}
+/*
+#include <stdio.h>
+int main(void)
+{
+    for (int i = 0; i < 128; i++)
+    {
+        printf("testing:'%c' %d\n", i , ft_isprint(i));
+    }
+    
+    return 0;
+}
+*/
