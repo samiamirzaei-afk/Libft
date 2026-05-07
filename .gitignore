@@ -9,3 +9,4 @@ libftTester
 *.d
 *.o
 *.a
+.gitignore
