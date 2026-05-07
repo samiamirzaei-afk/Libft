@@ -58,9 +58,8 @@ SRC =	ft_isalpha.c\
 	
 OBJ = $(SRC:.c=.o)
 DEPS = $(OBJ:.o=.d)
-CPPFLAG = -MMD -MP 
 CC = cc
-CCFLAG = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -MMD -MP
 AR = ar
 ARFLAG = rcs
 

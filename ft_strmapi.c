@@ -6,7 +6,7 @@
 /*   By: ammirzae <ammirzae@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 14:59:40 by ammirzae          #+#    #+#             */
-/*   Updated: 2026/05/04 07:17:02 by ammirzae         ###   ########.fr       */
+/*   Updated: 2026/05/07 11:16:16 by ammirzae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int	i;
-	int				s_len;
+	unsigned int	s_len;
 	char			*result;
 
 	if (!f || !s)

@@ -45,7 +45,7 @@ static int	sep_len(const char *str, char sep, int *i)
 	return (len);
 }
 
-static char	**ft_null_maker(char **str, int len, int i)
+static char	**ft_null_maker(char **str, int i)
 {
 	i = 0;
 	while (str[i] != NULL )
@@ -72,7 +72,7 @@ static char	**malloc_maker(const char *str, char sep, char **result,
 		len = sep_len(str, sep, &i);
 		result[k] = malloc((len + 1) * (sizeof(char)));
 		if (result[k] == NULL)
-			return (ft_null_maker(result, k, i));
+			return (ft_null_maker(result, i));
 		result[k][len] = '\0';
 		result[k] = memcpy(result[k], &str[i - len], len);
 		while (str[i] && str[i] == sep)
