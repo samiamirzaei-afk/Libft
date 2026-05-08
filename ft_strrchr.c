@@ -27,3 +27,31 @@ char	*ft_strrchr(const char *str, int num)
 	}
 	return (NULL);
 }
+/*
+int main()
+{
+    char    *str001 = NULL;
+    char    *str002 = NULL;
+    char    *str003 = NULL;
+    char    *str004 = NULL;
+    char    *str005 = NULL;
+    char    *str006 = NULL;
+    char    *str007 = NULL;
+    char    *str008 = NULL;
+    char    *str009 = NULL;
+    char    *str010 = NULL;
+    char    *result;
+
+
+    result = strrchr(str001, 44);
+    return(0);
+    result = strrchr(str002, 10);
+    result = strrchr(str003, 4);
+    result = strrchr(str004, 14);
+    result = strrchr(str005, 10);
+    result = strrchr(str006, 0);
+    result = strrchr(str007, 11);
+    result = strrchr(str008, 23);
+    result = strrchr(str009, -1);
+}
+*/

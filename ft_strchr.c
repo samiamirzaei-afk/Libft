@@ -40,8 +40,9 @@ int	main(void)
 
 	i = 0;
 	printf("strings before: '%s'  '%c'\n", str, str2);
-//	len = strchr(str, str2);
-	ft_len = ft_strchr(str3, str4);
+	len = strchr(str, str2);
+    return (0);
+//	ft_len = ft_strchr(str3, str4);
 //	printf("strchr:'%s'\n",len);
 	printf("ft_strchr:'%s'\n\n",ft_len);
 

@@ -64,13 +64,9 @@ printf("strings before: '%s'  sep:'%s' size:'%d'\n", str003, sep004, size);
 	printf("\n\n");
 	
 	
-char    str006[] = {"Hast du etwas Zeit für mich? Dann sing
-  ich ein Lied für dich Von 99 Luftballons; Auf ihrem Weg
-   zum Horizont. Denkst du vielleicht grad an mich?"};
+char str006[] = {"Hast du etwas Zeit für mich? Denkst du grad an mich?"};
     char    sep007[] = {"."};
-char    str008[] = {"Hast du etwas Zeit für mich? Dann singe
-  ich ein Lied für dich Von 99 Luftballons; Auf ihrem Weg
-   zum Horizont. Denkst du vielleicht grad an mich?"};
+char str008[] = {"Hast du etwas Zeit für mich? Denkst du grad an mich?"};
 size = 30;
     printf("strings before: '%s'  sep:'%s' size:'%d'\n", str006, sep007, size);
     len = memcmp(str006, sep007, size);
@@ -108,13 +104,9 @@ size = 30;
     printf("\n\n");
 
     
-    char    str015[] = {"Hast du etwas Zeit für mich? Dann
-     singe ich ein  Lied für dich Von 99 Luftballons; Auf
- ihrem Weg zum Horizont. Denkst du vielleicht grad an mich?"};
+char str015[] = {"Auf ihrem Weg zum Horizont."};
     char    sep016[] = ".";
-    char    str017[] = {"Hast du etwas Zeit für mich? Dann
-     singe ich ein Lied für dich Von 99 Luftballons; Auf
-ihrem Weg zum Horizont. Denkst du vielleicht grad an mich?"};
+char str017[] = {"Auf ihrem Weg zum Horizont."};
     size = 999;
     printf("strings before: '%s'  sep:'%s' size:'%d'\n", str015, sep016, size);
     len = memcmp(str015, sep016, size);

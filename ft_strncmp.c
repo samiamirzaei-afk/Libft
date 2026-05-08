@@ -114,8 +114,8 @@ char sstr44[] = {"Hast du etwas Zeit für mich? Dann singe ich ein Lied."};
 	
 	
 	printf("strings before: '%s'  '%s'\n", sstr1, sstr2);
-	len = strncmp(sstr22, sstr33, 9999);
-	ft_len =ft_strncmp(sstr44, sstr55, 9999);
+//	len = strncmp(sstr22, sstr33, 9999);
+//	ft_len =ft_strncmp(sstr44, sstr55, 9999);
 	printf("strrchr: '%d'\n",len);
 	printf("ft_strrchr: '%d'\n\n", ft_len);
 }

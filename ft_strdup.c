@@ -35,12 +35,14 @@ char	*ft_strdup(char *src)
 int	main(int argc, char **argv)
 {
 	char	*str;
+    char    *null = NULL;
 
 	if (argc != 2)
 	{
 		printf("please only add one argument");
 		return (1);
 	}
+    str = strdup(null);
 	str = ft_strdup(argv[1]);
 	printf("%s\n", str);
 	free(str);

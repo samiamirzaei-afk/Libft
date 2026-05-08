@@ -37,3 +37,13 @@ char	*ft_substr(char const *str, unsigned int start, size_t len)
 	}
 	return (result);
 }
+/*
+int main ()
+{
+    char *str001 = NULL;
+    char *result;
+    
+    result = substr(str001, 5, 10);
+    
+
+}*/
