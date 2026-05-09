@@ -6,7 +6,7 @@
 /*   By: ammirzae <ammirzae@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 13:31:46 by ammirzae          #+#    #+#             */
-/*   Updated: 2026/04/30 09:56:10 by ammirzae         ###   ########.fr       */
+/*   Updated: 2026/05/09 08:14:13 by ammirzae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,8 @@ int	main(void)
 	
 	i = 0;
 	printf("strings before: '%s'  '%s'\n", str, str2);
-//	len = strlcat(str2, str, 20);
+	len = strlcat(str2, str, 20);
+	return (0);
 //	ft_len = ft_strlcat(str4, str3, 20);
 	printf("strlcat:'%d' '%s'\n",len, str2);
 	printf("ft_strlcat:'%d' '%s'\n\n",ft_len, str4);

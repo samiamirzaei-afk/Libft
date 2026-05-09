@@ -28,6 +28,7 @@ t_list	*ft_lstmap(t_list *list, void *(*f)(void *), void (*del)(void *))
 		ptr_copy = ft_lstnew(temp);
 		if (ptr_copy == NULL)
 		{
+			del(temp);
 			ft_lstclear(&start, del);
 			return (NULL);
 		}

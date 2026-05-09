@@ -6,7 +6,7 @@
 /*   By: ammirzae <ammirzae@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 14:46:21 by ammirzae          #+#    #+#             */
-/*   Updated: 2026/05/06 14:30:10 by ammirzae         ###   ########.fr       */
+/*   Updated: 2026/05/09 08:08:56 by ammirzae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,15 +50,18 @@ int	main(void)
 {
 	int		i;
 	char	str[] = {"aaabcabcd"};
-	char	str2[20] = {"cd"};
+//	char	str2[20] = {"cd"};
+	char	*str2 = NULL;
 	char	str3[] = {"aaabcabcd"};
-	char	str4[20] = {"cd"};
+//	char	str4[20] = {"cd"};
+	char	*str4 = NULL;
 	char		*len;
 	char		*ft_len;
 	
 	i = 0;
 	printf("strings before: '%s'  '%s'\n", str, str2);
 	len = strnstr(str, str2, 8);
+	return (0);
 	ft_len = ft_strnstr(str3, str4, 8);
 	printf("strnstr:'%s'\n",len);
 	printf("ft_strnstr:'%s'\n\n",ft_len);
@@ -88,7 +91,7 @@ char sstr3[] = {"Hast du etwas Zeit für mich? Dann singe ich ein Lied."};
 	
 	
 	printf("strings before: '%s'  '%s'\n", sstr1, sstr2);
-	len = strnstr(sstr1, sstr2, 30);
+//	len = strnstr(sstr1, sstr2, 30);
 	ft_len =ft_strnstr(sstr3, sstr4, 30);
 	printf("strnstr: '%s'\n",len);
 	printf("ft_strnstr: '%s'\n\n", ft_len);

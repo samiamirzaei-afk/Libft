@@ -73,6 +73,13 @@ cc -Wall -Wextra -Werror -I/path/to/libft.h your_program.c -L/path/to/libft.a -l
 - `ft_lstiter`      – Apply a function to each node’s content
 - `ft_lstmap`       – Create a new list by applying a function to each node
 
+## Technical Implementation
+
+### NULL Pointer Handling – A Deliberate Design Choice
+
+None of the **Part 1 functions** (reimplemented libc functions) perform any NULL pointer checks. This is an intentional design decision that strictly follows the behavior of the original standard C library.
+Passing a `NULL` pointer to those functions will  lead to **undefined behavior** – typically a segmentation fault.
+
 ## Resources
 
 - [42 Norm] – Coding standard for 42 projects
