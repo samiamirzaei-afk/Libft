@@ -17,8 +17,6 @@ static int	ft_checks(size_t nmemb, size_t size)
 	size_t	result;
 	size_t	temp;
 
-	if (size == 0 || nmemb == 0)
-		return (0);
 	result = -1;
 	temp = result / size;
 	if (nmemb > temp)
@@ -31,7 +29,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	void	*result;
 
 	if (nmemb <= 0 || size <= 0)
-		return (malloc(nmemb * size));
+		return (malloc(0));
 	if (ft_checks(nmemb, size) == 0)
 		return (NULL);
 	result = malloc(nmemb * size);
