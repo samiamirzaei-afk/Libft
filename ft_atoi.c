@@ -53,10 +53,10 @@ int	ft_atoi(const char *str)
 		result_l = (result_l * 10) + (str[i] - '0');
 		i++;
 	}
-	result = result_l;
-	return (result * negative);
+	result = result_l * negative;
+	return (result);
 }
-/*
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -87,7 +87,7 @@ int	main(void)
 	char	sstr66[] = {"214748364252352352352352711111"};
 
 	i = 0;
-	printf("strings before: '%s'\n", str);
+/*	printf("strings before: '%s'\n", str);
 	len = atoi(str);
 	ft_len = ft_atoi(str3);
 	printf("atoi:'%d'\n",len);
@@ -104,6 +104,7 @@ int	main(void)
 	ft_len = ft_atoi(str411);
 	printf("atoi:'%d'\n",len);
 	printf("ft_atoi:'%d'\n\n",ft_len);
+	*/
 	printf("\n\n");
 	printf("strings before: '%s'\n", str12);
 	len = atoi(str12);
@@ -123,4 +124,4 @@ int	main(void)
 	printf("strrchr: '%d'\n",len);
 	printf("ft_strrchr: '%d'\n\n", ft_len);
 }
-*/
+
