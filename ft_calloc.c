@@ -29,7 +29,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	void	*result;
 
 	if (nmemb <= 0 || size <= 0)
-		return (malloc(0));
+		return (malloc(1));
 	if (ft_checks(nmemb, size) == 0)
 		return (NULL);
 	result = malloc(nmemb * size);

@@ -37,7 +37,7 @@ int	ft_atoi(const char *str)
 {
 	int	i;
 	int	negative;
-	int	result_l;
+	long	result_l;
 	int	result;
 
 	if (!str)
