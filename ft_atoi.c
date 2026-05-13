@@ -6,7 +6,7 @@
 /*   By: ammirzae <ammirzae@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 17:48:47 by ammirzae          #+#    #+#             */
-/*   Updated: 2026/05/06 17:18:40 by ammirzae         ###   ########.fr       */
+/*   Updated: 2026/05/13 09:37:29 by ammirzae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,10 @@ static int	ft_isspace(char letter)
 
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	negative;
+	int		i;
+	int		negative;
 	long	result_l;
-	int	result;
+	int		result;
 
 	if (!str)
 		return (0);
@@ -56,14 +56,9 @@ int	ft_atoi(const char *str)
 	result = result_l * negative;
 	return (result);
 }
-
+/*
 #include <stdio.h>
 #include <stdlib.h>
-
-
-
-
-
 int	main(void)
 {
 	int		i;
@@ -87,7 +82,7 @@ int	main(void)
 	char	sstr66[] = {"214748364252352352352352711111"};
 
 	i = 0;
-/*	printf("strings before: '%s'\n", str);
+	printf("strings before: '%s'\n", str);
 	len = atoi(str);
 	ft_len = ft_atoi(str3);
 	printf("atoi:'%d'\n",len);
@@ -104,7 +99,6 @@ int	main(void)
 	ft_len = ft_atoi(str411);
 	printf("atoi:'%d'\n",len);
 	printf("ft_atoi:'%d'\n\n",ft_len);
-	*/
 	printf("\n\n");
 	printf("strings before: '%s'\n", str12);
 	len = atoi(str12);
@@ -124,4 +118,4 @@ int	main(void)
 	printf("strrchr: '%d'\n",len);
 	printf("ft_strrchr: '%d'\n\n", ft_len);
 }
-
+*/
