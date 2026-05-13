@@ -74,7 +74,7 @@ static char	**malloc_maker(const char *str, char sep, char **result,
 		if (result[k] == NULL)
 			return (ft_null_maker(result, i));
 		result[k][len] = '\0';
-		result[k] = memcpy(result[k], &str[i - len], len);
+		result[k] = ft_memcpy(result[k], &str[i - len], len);
 		while (str[i] && str[i] == sep)
 			i++;
 		k++;
